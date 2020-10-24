@@ -1,0 +1,19 @@
+baseURL = "https://druskus20.github.io"
+languageCode = "en-us"
+title = "Druskus' Website"
+#publishDir = "druskus20.github.io"
+
+# Code colors
+pygmentsUseClasses = true
+pygmentsCodefences = true
+
+[permalinks]
+  posts    = "posts/:year/:month/:title/"
+#  projects = "projects/:year/:month/:title/"
+   projects = "projects"
+
+[params]
+  author = "Pedro Burgos"
+  description = "My personal website"
+  cssFolder = "css"
+  jsFolder  = "js"

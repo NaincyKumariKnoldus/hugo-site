@@ -1,0 +1,178 @@
+// ## Theme colors ## 
+// Gotten from: https://www.nordtheme.com
+
+:root {
+    // Light
+    --bg-0: #f2f4f8; // Darker Full Background
+    --bg-special: #f8f9fb; // Special background (Darker than bg-2, do not usually use)
+    --bg-1: #ffffff; // Normal background (UI prominent->put shadow, lighter than bg-1)
+
+    --ui-0: #434C5E; // Darker (titles) 
+    --ui-1: #4C566A; // Lighter (normal text)
+    --ui-2: #7b88a1; // Light bluish (lighter text)
+
+    --shadow-strong: rgba(184, 194, 215, 0.35);
+    --shadow-weak: rgba(216, 222, 233, 0.15);
+
+
+    // Not needed tho
+    /*
+	// Dark
+	--bg-0-alt: #242933;  // Darker Full Background // Probar 292e39
+	--bg-special-alt: #292e39;  // Special background (Lighter than bg-2, do not usually use)
+	--bg-1-alt: #2e3440;  // Lighter (UI prominent->put shadow, darker than bg-1)
+
+
+	--ui-0-alt: #eceff4;  // Darker (titles)
+	--ui-1-alt: #D8DEE9;  // Lighter (normal text)
+	--ui-2-alt: #abb9cf;  // Light bluish (lighter text)
+	*/
+
+    // Blues
+    --blue-0: #8FBCBB;
+    --blue-1: #88C0D0;
+    --blue-2: #81A1C1;
+    --blue-3: #5E81AC;
+
+    // Accent colors
+    --accent: #5E81AC;
+
+    // Other colors
+    --red: #BF616A;
+    --orange: #D08770;
+    --yellow: #EBCB8B;
+    --green: #A3BE8C;
+    --purple: #B48EAD;
+}
+
+[data-theme="dark"] {
+    // Dark
+    --bg-0: #242933; // Darker Full Background	// Probar 292e39
+    --bg-special: #292e39; // Special background (Lighter than bg-2, do not usually use)
+    --bg-1: #2e3440; // Lighter (UI prominent->put shadow, darker than bg-1)
+
+    --ui-0: #eceff4; // Darker (titles)
+    --ui-1: #b4b9c2; // Lighter (normal text)
+    --ui-2: #abb9cf; // Light bluish (lighter text)
+
+    --shadow-strong: rgba(15, 17, 21, 0.35);
+    --shadow-weak: rgba(36, 41, 51, 0.15);
+
+    // Not needed tho
+    /*
+	// Light
+	--bg-0-alt: #f2f4f8;  // Darker Full Background
+	--bg-special-alt: #f8f9fb;  // Special background (Darker than bg-2, do not usually use)
+	--bg-1-alt: #ffffff;  // Normal background (UI prominent->put shadow, lighter than bg-1)
+
+	--ui-0-alt: #434C5E; // Darker (titles)
+	--ui-1-alt: #4C566A; // Lighter (normal text)
+	--ui-2-alt: #7b88a1; // Light bluish (lighter text)
+	*/
+}
+
+
+// Fill color classes 
+.fill {
+    &--bg-0 {
+        fill: var(--bg-0);
+    }
+
+    &--bg-special {
+        fill: var(--bg-special);
+    }
+
+    &--bg-1 {
+        fill: var(--bg-1);
+    }
+
+    &--ui-0 {
+        fill: var(--ui-0);
+    }
+
+    &--ui-1 {
+        fill: var(--ui-1);
+    }
+
+    &--ui-2 {
+        fill: var(--ui-2);
+    }
+
+    &--blue-0 {
+        fill: var(--blue-0);
+    }
+
+    &--blue-1 {
+        fill: var(--blue-1);
+    }
+
+    &--blue-2 {
+        fill: var(--blue-2);
+    }
+
+    &--blue-3 {
+        fill: var(--blue-3);
+    }
+
+    &--accent {
+        fill: var(--accent);
+    }
+
+    &--red {
+        fill: var(--red);
+    }
+
+    &--orange {
+        fill: var(--orange);
+    }
+
+    &--yellow {
+        fill: var(--yellow);
+    }
+
+    &--green {
+        fill: var(--green);
+    }
+
+    &--purple {
+        fill: var(--purple);
+    }
+}
+
+
+
+/*
+// OLD COLORS
+:root {
+	// Dark Theme
+	--dark-bg-1: #292E39;
+	--dark-bg-2: #2E3440;
+	--dark-fg-1: rgb(236, 239, 244);
+	--dark-fg-2: rgb(229, 233, 240);
+	--light-shadow-1: rgb(236, 239, 244 6%);
+
+	// Light Theme
+	--light-bg-1: #ECEFF4;
+	--light-bg-2: #F8F9FB;
+	--light-fg-1: rgb(46, 52, 64);
+	--light-fg-2: rgb(59, 66, 82);
+	--light-shadow-1: rgb(46, 52, 64, 6%);
+	
+	// Accent colors
+	--accent-1: #BF616A;
+	--accent-2: #BF616A;
+
+	// Blues
+	--blue-1: #8FBCBB;
+	--blue-2: #88C0D0;
+	--blue-3: #81A1C1;
+	--blue-4: #5E81AC;
+
+	// Other colors
+	--red: #BF616A;
+	--orange: #D08770;
+	--yellow: #EBCB8B;
+	--green: #A3BE8C;
+	--purple: #B48EAD;
+}
+*/

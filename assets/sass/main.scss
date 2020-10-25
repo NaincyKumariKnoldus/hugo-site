@@ -1,0 +1,896 @@
+// TODO: Titles / subtitles style (rubik?)
+// TODO: Make nav en condiciones, con hamburguesa en @media pequeñas
+// TODO: Do hero. Flex doesnt work right tho (zoom+scroll), absolute fucks up the zoom
+// TODO: Partials en Hugo
+
+
+@import "fonts.scss";
+@import "themes.scss";
+
+// * All of this have to be in rems else 
+//    I should have to use calc to mix ems and rems
+$nav-padding: 0.5rem;
+$nav-height: 2.5rem+$nav-padding*2;
+
+$footer-padding: 1rem;
+$footer-height: 7.5rem+$footer-padding*2;
+
+$centered-padding: 3rem;
+$total-width: 50rem+$centered-padding*2 + 11rem; // 11 rem for article-centered
+
+// * Fix weird text resizing issues by adding 2 extra rem
+//      doesnt really make sense but you can see it works 
+//      by checking the margin
+$media-big: $total-width+3rem;  // Layout change
+$media-mid: $media-big/2;       // Font resize
+$media-small: 400px;            // Padding removed
+$nav-toogle: 34rem;
+
+// ### Standardization rules ###
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+b,
+span {
+    font-family: 'Inter', sans-serif;
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: var(--ui-0);
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+p,
+a {
+    font-size: 1rem;
+}
+
+h2,
+h3,
+h4,
+h5,
+p,
+a {
+    color: var(--ui-1);
+}
+
+img {
+    max-width: 100%;
+}
+
+// Remove outline and substitude it with border
+button:focus,
+a:focus {
+    outline: 0;
+    border: 0.1em solid var(--ui-1);
+    border-radius: 4px;
+}
+
+html {
+    font-size: 16px;
+
+    @media only screen and (max-width: $media-mid) {
+        font-size: 14px;
+    }
+}
+
+html,
+body {
+    margin: 0;
+}
+
+body {
+    background-color: var(--bg-0);
+}
+
+// ### General properties ### 
+.centered {
+    text-align: center;
+}
+
+// ### Scrollbar ### 
+::-webkit-scrollbar {
+    background: var(--bg-1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--ui-1);
+}
+
+// ### General Containers ### 
+%container {
+    box-sizing: border-box;
+    // !!! Placeholder
+}
+
+.container--grid1col {
+    @extend %container;
+    display: grid;
+    justify-content: center;
+    gap: 2em;
+}
+
+.container--grid2col {
+    @extend %container;
+    display: grid;
+    justify-content: center;
+    gap: 2em;
+
+    @media only screen and (min-width: $media-big) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.container--flexrow {
+    @extend %container;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.container--flexrow--center {
+    @extend .container--flexrow;
+    justify-content: center;
+}
+
+.container--flexrow--spaced {
+    @extend .container--flexrow;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container--timeline-fr {
+    @extend %container;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "title date"
+        "desc desc ";
+
+    @media only screen and (min-width: $media-big) {
+        grid-template-columns: 1fr 0.25em 1fr;
+        grid-template-areas:
+            "a1 a2 a3"
+            "a4 a2 a6";
+    }
+}
+
+.container--timeline-ev {
+    @extend %container;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "title date";
+
+    @media only screen and (min-width: $media-big) {
+        grid-template-columns: 1fr 0.25em 1fr;
+        grid-template-areas:
+            "a1 a2 a3";
+    }
+}
+
+.container--timeline-end {
+    @extend %container;
+
+    @media only screen and (min-width: $media-big) {
+        display: grid;
+        grid-template-columns: 1fr 0.25em 1fr;
+        grid-template-areas:
+            "image image image"
+            "a4 a2 a6";
+    }
+}
+
+%container--grid2area {
+    @extend %container;
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    margin: 2em 0;
+
+    grid-template-areas:
+        "box1"
+        "box2";
+
+    @media only screen and (min-width: $media-big) {
+        column-gap: 2em;
+    }
+}
+
+.container--grid2area--lb {
+    // Left Bigger
+    @extend %container--grid2area;
+
+    @media only screen and (min-width: $media-big) {
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-areas:
+            "box2 box1";
+    }
+}
+
+.container--grid2area--rb {
+    // Right Bigger
+    @extend %container--grid2area;
+
+    @media only screen and (min-width: $media-big) {
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-areas:
+            "box1 box2";
+    }
+}
+
+// ### Menus ###
+%menu {
+    // !!! Placeholder
+    box-sizing: border-box;
+
+    svg {
+        fill: var(--ui-1);
+    }
+}
+
+.menu--navigation {
+    @extend %menu;
+    list-style-type: none;
+    padding: 0.125em;
+    //font-size: 1rem;
+
+    a,
+    button {
+        font-size: 1em;
+        margin: 0 0.5em;
+    }
+
+    svg {
+        width: 1em;
+        height: 1em;
+    }
+}
+
+// ### Buttons ###
+%button {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+
+    &:active {
+        background-color: var(--bg-1);
+    }
+}
+
+.button--rounded {
+    @extend %button;
+
+    $border-size: 0.1em;
+    padding: 0.25em 0.4em;
+    border-radius: 4px;
+
+    // Prevents moving other elements
+    border: $border-size solid transparent;
+
+    &:hover {
+        border: $border-size solid var(--ui-1);
+    }
+
+    &:active {
+        svg {
+            fill: var(--bg-1);
+        }
+
+        color: var(--bg-1);
+        background-color: var(--ui-1);
+    }
+}
+
+// ### Boxes ###
+%box {
+    // !!! Placeholder
+    box-sizing: border-box;
+}
+
+.box--border {
+    @extend %box;
+    padding: 0.5em;
+    border: 0.1em solid var(--ui-1);
+}
+
+// ### Text and Titles ###
+%title {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+}
+
+.title--normal {
+    @extend %title;
+    font-weight: 600;
+}
+
+.title--linespaced {
+    @extend %title;
+    font-weight: 300;
+    line-height: 1.5em;
+}
+
+.title--letterspaced {
+    @extend %title;
+    letter-spacing: 0.3em;
+}
+
+.title--mono {
+    @extend %title;
+    font-family: "DejaVu Sans Mono";
+    font-weight: 400;
+    letter-spacing: 0.15em;
+}
+
+%text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.text--normal {
+    @extend %text;
+}
+
+.text--linespaced {
+    @extend %text;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5em;
+}
+
+@mixin shadow-strong {
+    box-shadow: 0 6px 10px var(--shadow-strong),
+        0 0 6px var(--shadow-strong);
+
+    &:hover {
+        box-shadow: 0 6px 15px var(--shadow-strong),
+            0 4px 8px var(--shadow-strong);
+    }
+}
+
+// ### Cards ###
+.card {
+    @include shadow-strong;
+
+    text-decoration: none;
+    font-size: 1rem;
+    min-height: 10em;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+
+    padding: 1em 2em 1.2em 2em;
+    border-radius: 4px;
+    background-color: var(--bg-1); // For all kind of cards
+
+    /*
+    // I dont think this is needed
+    img {
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        max-height: 120px;
+    }
+    */
+
+    &:hover,
+    &:focus,
+    &:active {
+        outline: none;
+        border: none;
+        transform: scale(1.02);
+    }
+
+    h2,
+    h3,
+    p {
+        color: var(--ui-1);
+    }
+}
+
+%cardbg {
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 5em;
+    padding-right: 5.5em;
+}
+.cardbg--blank {
+    @extend %cardbg;
+    background-image: url('../static/blank.svg');
+}
+
+.cardbg--terminal {
+    @extend %cardbg;
+    background-image: url('../static/terminal.svg');
+}
+
+.cardbg--programming {
+    @extend %cardbg;
+    background-image: url('../static/programming.svg');
+}
+
+.cardbg--linux {
+    @extend %cardbg;
+    background-image: url('../static/linux.svg');
+}
+
+// ### Layout stuff ### 
+.page-wrapper {
+    // Drags the footer down
+    min-height: calc(100vh - #{($footer-height + $nav-height)});
+  
+}
+.page-wrapper, .nav, .footer {
+    padding: 0 1em;
+
+    @media only screen and (max-width: $media-small) {
+        padding: 0;
+    }
+}
+
+// ### Sections ###
+.section {
+    box-sizing: border-box;
+}
+
+.section--page-title {
+    @extend .section;
+    text-align: center;
+}
+
+.section-divider {
+    height: 2px;
+    margin: 3em auto;
+    background: linear-gradient(90deg, var(--bg-1) 10%, var(--ui-1) 50%, var(--bg-1) 90%);
+    background: var(--bg-0);
+    width: 75%;
+}
+
+.article,
+.centered-content {
+    padding-top: $centered-padding;
+    padding-bottom: $centered-padding;
+    margin: auto;
+}
+
+.article {
+    @include shadow-strong();
+    background-color: var(--bg-1);
+    border-radius: 5px;
+    margin: 1em auto;
+}
+
+.article-spacer {
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.section__title {
+    color: var(--ui-0);
+}
+
+.section__subtitle {
+    color: var(--ui-0);
+}
+
+.subsection__title {
+    color: var(--ui-1);
+}
+
+.subsection__subtitle {
+    color: var(--ui-1);
+    margin: 1.125em auto;
+    max-width: 70%;
+}
+
+// Shadow for the nav
+.shadow-strong {
+    @include shadow-strong();
+}
+
+.centered-content {
+    padding-left: $centered-padding;
+    padding-right: $centered-padding;
+    max-width: $total-width;
+
+    @media only screen and (max-width: $media-small) {
+        padding-left: $centered-padding/2;
+        padding-right: $centered-padding/2;
+    }
+    
+}
+// ### Nav Menu ### 
+.nav {
+    z-index: 10; // Max z index
+
+    position: sticky;
+    top: 0;
+    min-height: $nav-height;
+    transition: top 0.3s; // Transition on scroll
+    background-color: var(--bg-0); 
+    
+    .centered-content {
+        padding-top: $nav-padding;
+        padding-bottom: $nav-padding;
+  
+        // Center vertically nav menu
+        display: flex;
+        align-items: center;
+        min-height: inherit;
+    }
+
+    /// !!! irrelevante si cambio el menu?
+    .container--flexrow--spaced {
+        width: 100%;
+    }
+
+    ul {
+        margin: 0;
+    }
+
+    svg {
+        fill: var(--ui-1);
+    }
+
+    .logo {
+
+        border: 0.1em solid transparent;
+        &:hover,
+        &:focus,
+        &:active {
+            border: 0.1em solid transparent;
+        }
+
+        svg {
+            width: 2.2em;
+            height: 2.2em;
+        }
+    }
+
+
+}
+
+.nav__toogle {
+    display: none;
+    @media only screen and (max-width: $nav-toogle) {
+        display: block;
+    }
+}
+
+.nav-hide {
+    @media only screen and (max-width: $nav-toogle) {
+            display: none;
+    }
+}
+
+.accent {
+    color: var(--accent);
+}
+
+// ### Hero ###
+.hero {
+    // Substract the height of the nav from the hero
+    //min-height: calc(100vh - #{$nav-height});
+    /*#{$footer-height}*/
+
+    .hero-container {
+        // Very unique one
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .hero__banner {
+        // Font override
+        //font-size: 1rem;
+        text-align: center;
+
+        h1 {
+            // Font override 
+            font-size: 2.2rem;
+            color: var(--ui-0);
+        }
+
+        h2 {
+            // Font override
+            font-size: 1.8rem;
+            color: var(--ui-1);
+        }
+
+    }
+
+    .hero__arrow {
+        // Not sure why em works weird (maybe svg itself)
+        width: 3em;
+        height: 3em;
+
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: transparent;
+
+        svg {
+            fill: var(--ui-1);
+        }
+    }
+}
+
+// ### Who am I ###
+.whoami {
+    .section__title,
+    .subsection__title,
+    .subsection__subtitle {
+        text-align: center;
+    }
+
+    .whoami__info {
+        // !!! Not sure if this should be done here
+        font-size: 1.125rem;
+
+        .whoami__block {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            flex-grow: 1;
+            flex-shrink: 1;
+            // flex-basis: 25px; // Doesnt seem necessary
+
+            svg {
+                // Prevents flex from expanding them
+                min-width: 1.8em;
+                min-height: 1.8em;
+                width: 1.8em;
+                height: 1.8em;
+                margin: 1.1em 0;
+                margin-right: 4%;
+                fill: var(--ui-1);
+            }
+        }
+    }
+
+    .whoami__image {
+        text-align: center;
+   
+        svg {
+        // Width on 1c layout
+        width: 70%;
+        max-width: 25em;
+        margin: 1em;
+
+            @media only screen and (min-width: $media-big) {
+                width: 100%;
+                // ?? override normal max-width?
+                max-width: 100%;
+                margin: 0 0 1em 0;
+            }
+        }
+    }
+
+    // --- Grid areas ---
+    .whoami__info {
+        grid-area: box2;
+    }
+
+    .whoami__image {
+        grid-area: box1;
+    }
+}
+
+// ### My Work ### 
+.my-work {
+
+    .section__title,
+    .subsection__title,
+    .subsection__subtitle {
+        text-align: center;
+    }
+
+    .my-work__posts {
+        // Simulate section
+        margin-top: $centered-padding;
+    }
+
+    .button--rounded {
+        margin-top: 2em;
+    }
+}
+
+// ### Footer ###
+.footer {
+    min-height: $footer-height;
+
+    // Override padding
+    .centered-content {
+        padding-top: $footer-padding;
+        padding-bottom: $footer-padding;
+    }
+
+    .footer-container {
+        text-align: center;
+    }
+
+    svg {
+        width: 1.5em;
+        height: 1.5em;
+        margin: 0 0.1em;
+    }
+
+    .border {
+        fill: var(--ui-1);
+    }
+}
+
+// ### Timeline
+.timeline {
+    .timeline__bar {
+        background-color: var(--ui-1);
+    }
+
+    .container--timeline-fr {
+        .box--border {
+            display: inline-block;
+        }
+
+        .timeline__date {
+            text-align: right;
+        }
+
+        .timeline__date,
+        .timeline__title,
+        .timeline__description {
+            margin: 1em;
+        }
+
+        .timeline__description {
+            margin-bottom: 1.5em;
+        }
+
+        .timeline__date,
+        .timeline__title {
+            margin-top: 1.5em;
+        }
+
+        .timeline__date .box--border {
+            background-color: var(--ui-1);
+            color: var(--bg-1);
+        }
+    }
+
+
+    .container--timeline-end {
+        .timeline__image {
+            display: none;
+
+            svg {
+                height: 5em;
+            }
+
+            // Show the image
+            @media only screen and (min-width: $media-big) {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-end;
+            }
+        }
+
+        // Show a bar
+        @media only screen and (min-width: $media-big) {
+            .timeline__bar {
+                min-height: 3em;
+            }
+        }
+    }
+
+    // Grid areas
+    .timeline__bar {
+        grid-area: a2;
+    }
+
+    .container--timeline-fr {
+        .timeline__title {
+            grid-area: title;
+        }
+
+        .timeline__description {
+            grid-area: desc;
+        }
+
+        .timeline__date {
+            grid-area: date;
+        }
+    }
+
+    .container--timeline-ev {
+        .timeline__title {
+            grid-area: title;
+        }
+
+        .timeline__date {
+            grid-area: date;
+        }
+    }
+
+    .container--timeline-end {
+        .timeline__image {
+            grid-area: image;
+        }
+    }
+
+    @media only screen and (min-width: $media-big) {
+
+        // Align items to the bar
+        .timeline-right .timeline__title,
+        .timeline-right .timeline__description,
+        .timeline-left .timeline__date {
+            text-align: right;
+        }
+
+        .timeline-right .timeline__date {
+            text-align: left;
+        }
+
+        .timeline-right {
+            .timeline__title {
+                grid-area: a1;
+            }
+
+            .timeline__description {
+                grid-area: a4;
+            }
+
+            .timeline__date {
+                grid-area: a3;
+            }
+        }
+
+        .timeline-left {
+            .timeline__title {
+                grid-area: a3;
+            }
+
+            .timeline__description {
+                grid-area: a6;
+            }
+
+            .timeline__date {
+                grid-area: a1;
+            }
+        }
+    }
+}
+

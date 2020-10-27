@@ -1,3 +1,7 @@
+/**
+ * My dirty js code. Ideally eventually wont use jquery.
+ */
+
 var articleStart;
 var navHide;
 function loadDefParameters() {
@@ -38,19 +42,21 @@ function throttle(limit, callback) {
   }
 }
 
-
-$(window).scroll(
-  throttle(50,
-    function () {
-     // let height = ($('#hero').height() + $('#nav').height());
-      
-      if ($(window).scrollTop() >= articleStart) {
-        $('nav').addClass('shadow-strong');
-      }
-      else {
-        $('nav').removeClass('shadow-strong');
-      }
-}));
+// Only run on index.html
+if (window.location.pathname === '/') {
+  $(window).scroll(
+    throttle(50,
+      function () {
+      // let height = ($('#hero').height() + $('#nav').height());
+        
+        if ($(window).scrollTop() >= articleStart) {
+          $('nav').addClass('shadow-strong');
+        }
+        else {
+          $('nav').removeClass('shadow-strong');
+        }
+  }));
+}
 
 // Hide scrollbar on fullscreen (if supported)
 /* 

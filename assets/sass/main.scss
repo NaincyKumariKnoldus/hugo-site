@@ -21,7 +21,7 @@ $total-width: 50rem+$centered-padding*2 + 11rem; // 11 rem for article-centered
 // * Fix weird text resizing issues by adding 2 extra rem
 //      doesnt really make sense but you can see it works 
 //      by checking the margin
-$media-big: $total-width+3rem;  // Layout change
+$media-big: $total-width+3rem - 11rem;  // Layout change
 $media-mid: $media-big/2;       // Font resize
 $media-small: 400px;            // Padding removed
 $nav-toogle: 34rem;
@@ -134,6 +134,7 @@ body {
     display: grid;
     justify-content: center;
     gap: 2em;
+    grid-template-columns: 1fr;
 }
 
 .container--grid2col {
@@ -141,6 +142,7 @@ body {
     display: grid;
     justify-content: center;
     gap: 2em;
+    grid-template-columns: 1fr;
 
     @media only screen and (min-width: $media-big) {
         grid-template-columns: repeat(2, 1fr);
@@ -425,26 +427,26 @@ body {
     background-repeat: no-repeat;
     background-position: right;
     background-size: 5em;
-    padding-right: 5.5em;
+    padding-right: 6em;
 }
 .cardbg--blank {
     @extend %cardbg;
-    background-image: url('../static/blank.svg');
+    background-image: url('/assets/blank.svg');
 }
 
 .cardbg--terminal {
     @extend %cardbg;
-    background-image: url('../static/terminal.svg');
+    background-image: url('/assets/terminal.svg');
 }
 
 .cardbg--programming {
     @extend %cardbg;
-    background-image: url('../static/programming.svg');
+    background-image: url('/assets/programming.svg');
 }
 
 .cardbg--linux {
     @extend %cardbg;
-    background-image: url('../static/linux.svg');
+    background-image: url('/assets/linux.svg');
 }
 
 // ### Layout stuff ### 
@@ -494,7 +496,7 @@ body {
 }
 
 .article-spacer {
-    width: 80%;
+    width: 85%;
     margin: 2rem auto;
 }
 

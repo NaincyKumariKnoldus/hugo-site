@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" class="next-head">
     <meta charset="utf-8">
@@ -22,30 +21,22 @@
     <link rel="manifest" href="{{ .Site.BaseURL }}/favicon/site.webmanifest">
     <link rel="mask-icon" href="{{ .Site.BaseURL }}/favicon/safari-pinned-tab.svg" color="#5bbad5">
 
-    
     {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <!--<link rel="stylesheet" href="{{ .Site.BaseURL }}/{{ .Site.Params.cssFolder }}/main.css">-->
 
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     {{ if .Site.Params.jsFolder }}
     <script src="{{ .Site.BaseURL }}/{{ .Site.Params.jsFolder }}/main.js"></script>
     {{ end }}
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
     {{ partial "nav.html" . }}
-   
     <div id="page-wrapper" class="page-wrapper">
-
     {{ block "main" . }}
     {{ end }}
-    
     </div>
     {{ partial "footer.html" . }}
-   
 </body>
-
 </html>

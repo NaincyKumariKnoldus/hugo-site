@@ -371,48 +371,46 @@
             <h3 class="subsection__title title--normal">Projects</h3>
             <p class="subsection__subtitle text--linespaced">This are some of my recent projects.</p>
             <div class="container--grid2col">
-                <a href="#" class="card cardbg--linux">
-                    <h3 class="title--normal">UI Components</h3>
-                    <p class="text--normal">Tabs, buttons, inputs, lists, cards, and more! A comprehensive
-                        library
-                        of mobile UI components, ready to go.</p>
+                {{ range first 3  (where .Site.RegularPages "Section" "projects")  }}
+                <!-- If external link exists in projects matter -->
+                {{ if isset .Params "externallink" }}
+                <a href="{{ .Params.externallink }}" class="card cardbg--linux" target="_blank">
+                    <h3 class="title--normal">{{ .Title }}</h3>
+                    <p class="text--normal">
+                        {{ .Description }}
+                    </p>
                 </a>
-                <a href="#" class="card cardbg--programming">
-                    <h3 class="title--normal">Theming</h3>
-                    <p class="text--normal">Learn how to easily customize and modify your app’s design to
-                        fit
-                        your
-                        brand across all mobile platform styles.</p>
+                
+                <!-- Else show internal projects page -->
+                {{ else }}
+                <a  href="{{ .Permalink }}" class="card cardbg--linux" target="_blank">
+                    <h3 class="title--normal">{{ .Title }}</h3>
+                    <p class="text--normal">{{ .Title }}</p>
                 </a>
-                <a href="#" class="card cardbg--linux">
-                    <h3 class="title--normal">Theming</h3>
-                    <p class="text--normal">Learn how to easily .</p>
-                </a>
+                {{ end }}
+                {{ end }}
             </div>
         </div>
-        <div class="centered"><a href="#" class="button--rounded">See more</a></div>
+        <div class="centered"><a href="{{.Site.BaseURL}}/projects" class="button--rounded">See more</a></div>
         <div class="my-work__posts">
             <h3 class="subsection__title title--rounded">Posts</h3>
             <p class="subsection__subtitle text--linespaced">Sometimes I write stuff. Usually my posts are
                 related to what I’m working on at the moment or my hobbies.</p>
             <div class="container--grid1col">
-                <a href="#" class="card cardbg--blank">
-                    <h3 class="title--normal">UI Components</h3>
-                    <p class="text--normal">Tabs, buttons, inputs, lists, cards, and more! A comprehensive
-                        library
-                        of mobile UI components, ready to go.</p>
+
+                {{ range first 2  (where .Site.RegularPages "Section" "posts")  }}
+                <a href="{{ .Permalink }}" class="card cardbg--blank">
+                    <h3 class="title--normal">{{ .Title }}</h3>
+                    <p class="text--normal">
+                        {{ .Summary }}
+                    </p>
                 </a>
-                <a href="#" class="card cardbg--terminal">
-                    <h3 class="title--normal">Theming</h3>
-                    <p class="text--normal">Learn how to easily customize and modify your app’s design to
-                        fit
-                        your
-                        brand across all mobile platform styles.</p>
-                </a>
+                {{ end }}
+
 
             </div>
         </div>
-        <div class="centered"><a href="#" class="button--rounded">See more</a></div>
+        <div class="centered"><a href="{{.Site.BaseURL}}/posts" class="button--rounded">See more</a></div>
     </section>
 </div>
 </article>

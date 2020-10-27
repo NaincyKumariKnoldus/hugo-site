@@ -2,7 +2,7 @@ baseURL = "https://druskus20.github.io"
 languageCode = "en-us"
 title = "Druskus' Website"
 #publishDir = "druskus20.github.io"
-
+summarylength = 20
 # Code colors
 pygmentsUseClasses = true
 pygmentsCodefences = true

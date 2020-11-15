@@ -1,0 +1,27 @@
+{{ define "title" }}
+{{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<article id="article" class="article centered-content">
+  <div class="article-spacer">
+    <h1>Post list</h1>
+  
+  {{ range .Pages.GroupByDate "2006" }}
+  <div>
+    <h3>{{ .Key }}</h3>
+    <ul>
+      {{ range .Pages }}
+      <li class="post-item">
+        <a href="{{ .Permalink }}">
+          <span>{{ .Title }}</span>
+          <span>{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+</div>
+</article>
+{{ end }}

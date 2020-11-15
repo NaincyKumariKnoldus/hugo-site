@@ -10,20 +10,22 @@
 // * All of this have to be in rems else 
 //    I should have to use calc to mix ems and rems
 $nav-padding: 0.5rem;
-$nav-height: 2.5rem+$nav-padding*2;
+$nav-height: 2.75rem+$nav-padding*2;
+
+$article-margin: 1rem;
 
 $footer-padding: 1rem;
-$footer-height: 7.5rem+$footer-padding*2;
+$footer-height: 7.5rem+ $footer-padding*2;
 
 $centered-padding: 3rem;
-$total-width: 50rem+$centered-padding*2 + 11rem; // 11 rem for article-centered
+$total-width: 50rem+$centered-padding*2+11rem; // 11 rem for article-centered
 
 // * Fix weird text resizing issues by adding 2 extra rem
 //      doesnt really make sense but you can see it works 
 //      by checking the margin
-$media-big: $total-width+3rem - 11rem;  // Layout change
-$media-mid: $media-big/2;       // Font resize
-$media-small: 400px;            // Padding removed
+$media-big: $total-width+3rem - 11rem; // Layout change
+$media-mid: $media-big/2; // Font resize
+$media-small: 400px; // Padding removed
 $nav-toogle: 34rem;
 
 // ### Standardization rules ###
@@ -122,6 +124,8 @@ body {
 ::-webkit-scrollbar-thumb {
     background: var(--ui-1);
 }
+
+
 
 // ### General Containers ### 
 %container {
@@ -429,6 +433,7 @@ body {
     background-size: 5em;
     padding-right: 6em;
 }
+
 .cardbg--blank {
     @extend %cardbg;
     background-image: url('/assets/blank.svg');
@@ -452,10 +457,14 @@ body {
 // ### Layout stuff ### 
 .page-wrapper {
     // Drags the footer down
-    min-height: calc(100vh - #{($footer-height + $nav-height)});
-  
+    // *article top margin doesnt count as article height
+    min-height: calc(100vh - #{$article-margin + $footer-height + $nav-height});
+
 }
-.page-wrapper, .nav, .footer {
+
+.page-wrapper,
+.nav,
+.footer {
     padding: 0 1em;
 
     @media only screen and (max-width: $media-small) {
@@ -492,7 +501,7 @@ body {
     @include shadow-strong();
     background-color: var(--bg-1);
     border-radius: 5px;
-    margin: 1em auto;
+    margin: $article-margin auto;
 }
 
 .article-spacer {
@@ -532,8 +541,9 @@ body {
         padding-left: $centered-padding/2;
         padding-right: $centered-padding/2;
     }
-    
+
 }
+
 // ### Nav Menu ### 
 .nav {
     z-index: 10; // Max z index
@@ -542,12 +552,12 @@ body {
     top: 0;
     min-height: $nav-height;
     transition: top 0.3s; // Transition on scroll
-    background-color: var(--bg-0); 
-    
+    background-color: var(--bg-0);
+
     .centered-content {
         padding-top: $nav-padding;
         padding-bottom: $nav-padding;
-  
+
         // Center vertically nav menu
         display: flex;
         align-items: center;
@@ -570,6 +580,7 @@ body {
     .logo {
 
         border: 0.1em solid transparent;
+
         &:hover,
         &:focus,
         &:active {
@@ -587,6 +598,7 @@ body {
 
 .nav__toogle {
     display: none;
+
     @media only screen and (max-width: $nav-toogle) {
         display: block;
     }
@@ -594,7 +606,7 @@ body {
 
 .nav-hide {
     @media only screen and (max-width: $nav-toogle) {
-            display: none;
+        display: none;
     }
 }
 
@@ -653,6 +665,7 @@ body {
 
 // ### Who am I ###
 .whoami {
+
     .section__title,
     .subsection__title,
     .subsection__subtitle {
@@ -686,12 +699,12 @@ body {
 
     .whoami__image {
         text-align: center;
-   
+
         svg {
-        // Width on 1c layout
-        width: 70%;
-        max-width: 25em;
-        margin: 1em;
+            // Width on 1c layout
+            width: 70%;
+            max-width: 25em;
+            margin: 1em;
 
             @media only screen and (min-width: $media-big) {
                 width: 100%;
@@ -743,6 +756,18 @@ body {
 
     .footer-container {
         text-align: center;
+    }
+
+
+    a {
+        text-decoration: none;
+        border: 0.1em solid transparent;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border: 0.1em solid transparent;
+        }
     }
 
     svg {
@@ -895,4 +920,3 @@ body {
         }
     }
 }
-

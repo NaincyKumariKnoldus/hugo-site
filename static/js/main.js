@@ -58,16 +58,6 @@ if (window.location.pathname === '/') {
   }));
 }
 
-// Hide scrollbar on fullscreen (if supported)
-/* 
-$(window).resize(function() {
-    if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
-        $("html").addClass("inv-scrollbar");
-    } else {
-        $("html").removeClass("inv-scrollbar");
-    }
-});*/
-
 
 // Scroll down when clicking the arrow in index.html
 // TODO: Replace this with plain js

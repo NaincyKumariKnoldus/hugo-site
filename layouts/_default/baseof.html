@@ -23,8 +23,8 @@
 
     {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
-    <!--<link rel="stylesheet" href="{{ .Site.BaseURL }}/{{ .Site.Params.cssFolder }}/main.css">-->
-
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/{{ .Site.Params.cssFolder }}/syntax.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     {{ if .Site.Params.jsFolder }}
     <script src="{{ .Site.BaseURL }}/{{ .Site.Params.jsFolder }}/main.js"></script>

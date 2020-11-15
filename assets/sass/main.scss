@@ -6,6 +6,7 @@
 
 @import "fonts.scss";
 @import "themes.scss";
+@import "syntax.scss";
 
 // * All of this have to be in rems else 
 //    I should have to use calc to mix ems and rems
@@ -47,6 +48,10 @@ span {
     font-family: 'Inter', sans-serif;
 }
 
+code, code * {
+    font-family: "monospace";
+}
+
 h1 {
     font-size: 2.2rem;
     color: var(--ui-0);
@@ -85,6 +90,8 @@ a {
 img {
     max-width: 100%;
 }
+
+
 
 // Remove outline and substitude it with border
 button:focus,

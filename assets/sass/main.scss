@@ -96,9 +96,7 @@ img {
 // Remove outline and substitude it with border
 button:focus,
 a:focus {
-    outline: 0;
-    border: 0.1em solid var(--ui-1);
-    border-radius: 4px;
+
 }
 
 html {
@@ -324,6 +322,12 @@ body {
 
         color: var(--bg-1);
         background-color: var(--ui-1);
+    }
+
+    &:focus {
+        outline: 0;
+        border: 0.1em solid var(--ui-1);
+        border-radius: 4px;
     }
 }
 
@@ -591,6 +595,7 @@ body {
         &:hover,
         &:focus,
         &:active {
+            outline: 0;
             border: 0.1em solid transparent;
         }
 

@@ -92,7 +92,9 @@ h4,
 h5,
 h6,
 p,
-a {
+a,
+ul,
+li {
     color: var(--ui-1);
 }
 
@@ -959,6 +961,10 @@ body {
 // ### Post List
 .post-list {
 
+    .container--post-list {
+        margin: 3em 0;
+    }
+
     .post-list__year {
         margin: 0.5em;
     }
@@ -985,5 +991,10 @@ body {
 
         text-decoration: none;
     }
+    
 }
 
+// ### Post ### 
+.post {
+
+}

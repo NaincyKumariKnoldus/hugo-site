@@ -43,20 +43,19 @@ function throttle(limit, callback) {
 }
 
 // Only run on index.html
-if (window.location.pathname === '/') {
-  $(window).scroll(
-    throttle(50,
-      function () {
-      // let height = ($('#hero').height() + $('#nav').height());
-        
-        if ($(window).scrollTop() >= articleStart) {
-          $('nav').addClass('shadow-strong');
-        }
-        else {
-          $('nav').removeClass('shadow-strong');
-        }
-  }));
-}
+/*if (window.location.pathname === '/') {*/
+$(window).scroll(
+  throttle(50,
+    function () {
+    // let height = ($('#hero').height() + $('#nav').height());
+      if ($(window).scrollTop() >= articleStart) {
+        $('nav').addClass('shadow-strong');
+      }
+      else {
+        $('nav').removeClass('shadow-strong');
+      }
+}));
+
 
 
 // Scroll down when clicking the arrow in index.html

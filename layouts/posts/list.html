@@ -3,17 +3,26 @@
 {{ end }}
 
 {{ define "main" }}
+<header class="section--page-title">
+  <div class="centered-content">
+<h1 class="section__title title--normal">Post list</h1>
+<p class="section__subtitle">This are some of the things I write</p>
+</div>
+</header>
 <article id="article" class="article centered-content">
   <div class="article-spacer">
-    <h1>Post list</h1>
+    <section id="post-list" class="post-list section">
+    
+
   
+
   {{ range .Pages.GroupByDate "2006" }}
-  <div>
-    <h3>{{ .Key }}</h3>
-    <ul>
+  <div class="container--post-list">
+    <h3 class="post-list__year">{{ .Key }}</h3>
+    <ul class="post-list__posts">
       {{ range .Pages }}
-      <li class="post-item">
-        <a href="{{ .Permalink }}">
+        <li class="post-item">
+        <a class="post-item__link" href="{{ .Permalink }}">
           <span>{{ .Title }}</span>
           <span>{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
         </a>
@@ -22,6 +31,8 @@
     </ul>
   </div>
   {{ end }}
+    </section>
 </div>
+
 </article>
 {{ end }}

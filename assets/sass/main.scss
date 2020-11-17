@@ -41,6 +41,10 @@ h2,
 h3,
 h4,
 h5,
+h6 {
+    font-family: 'Rubik', sans-serif;
+}
+
 p,
 a,
 b,
@@ -73,6 +77,10 @@ h5 {
     font-size: 1rem;
 }
 
+h6 {
+    font-size: 0.8rem;
+}
+
 p,
 a {
     font-size: 1rem;
@@ -82,6 +90,7 @@ h2,
 h3,
 h4,
 h5,
+h6,
 p,
 a {
     color: var(--ui-1);
@@ -261,6 +270,24 @@ body {
     }
 }
 
+.container--post-list {
+    @extend %container;
+
+    display: grid;
+    gap: 2em;
+
+    /*
+    max-width: 45em;
+    margin: 2em auto;
+    */
+    
+    @media only screen and (min-width: $media-big) {
+        grid-template-columns: 0fr 1fr;
+        grid-template-areas:
+            "year list";
+    }
+}
+
 // ### Menus ###
 %menu {
     // !!! Placeholder
@@ -345,8 +372,7 @@ body {
 
 // ### Text and Titles ###
 %title {
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
+    font-family: 'Rubik';
 }
 
 .title--normal {
@@ -484,23 +510,6 @@ body {
 }
 
 // ### Sections ###
-.section {
-    box-sizing: border-box;
-}
-
-.section--page-title {
-    @extend .section;
-    text-align: center;
-}
-
-.section-divider {
-    height: 2px;
-    margin: 3em auto;
-    background: linear-gradient(90deg, var(--bg-1) 10%, var(--ui-1) 50%, var(--bg-1) 90%);
-    background: var(--bg-0);
-    width: 75%;
-}
-
 .article,
 .centered-content {
     padding-top: $centered-padding;
@@ -519,6 +528,24 @@ body {
     width: 85%;
     margin: 2rem auto;
 }
+
+.section {
+    box-sizing: border-box;
+}
+
+.section--page-title {
+    @extend .section;
+    text-align: center;
+}
+
+.section-divider {
+    height: 2px;
+    margin: 3em auto;
+    background: linear-gradient(90deg, var(--bg-1) 10%, var(--ui-1) 50%, var(--bg-1) 90%);
+    background: var(--bg-0);
+    width: 75%;
+}
+
 
 .section__title {
     color: var(--ui-0);
@@ -931,4 +958,36 @@ body {
             }
         }
     }
+}
+
+// ### Post List
+.post-list {
+
+    .post-list__year {
+        margin: 0.5em;
+    }
+    
+    .post-list__posts {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .post-item {
+        border-bottom-style: dashed;
+        border-width: 1px;
+        color: var(--ui-1);
+    }
+
+    .post-item__link {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        margin: 0.5em;
+        padding: 0.5em;
+
+        text-decoration: none;
+    }
+
 }

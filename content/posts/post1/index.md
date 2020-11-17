@@ -1,5 +1,6 @@
 ---
 title: "Post1"
+desc: "Sample description"
 date: 2020-10-27T23:43:25+01:00
 author: "noAuthor"
 categories: ["Undefined"]

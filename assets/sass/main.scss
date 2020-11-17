@@ -100,14 +100,12 @@ img {
     max-width: 100%;
 }
 
-
-
 // Remove outline and substitude it with border
 button:focus,
 a:focus {
 
 }
-
+ 
 html {
     font-size: 16px;
 
@@ -138,8 +136,6 @@ body {
 ::-webkit-scrollbar-thumb {
     background: var(--ui-1);
 }
-
-
 
 // ### General Containers ### 
 %container {
@@ -820,7 +816,7 @@ body {
     }
 }
 
-// ### Timeline
+// ### Timeline ###
 .timeline {
     .timeline__bar {
         background-color: var(--ui-1);
@@ -989,5 +985,5 @@ body {
 
         text-decoration: none;
     }
-
 }
+

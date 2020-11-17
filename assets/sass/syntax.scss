@@ -1,9 +1,20 @@
+@import "themes.scss";
+
 .highlight,
 pre.highlight {
     background: #282c34;
     color: #abb2bf;
     overflow: auto;
-}
+    margin: 1em 0;
+
+    &::-webkit-scrollbar {
+        background: #282c34;;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--ui-1);
+    }
+} 
 
 .highlight {
     pre {

@@ -329,8 +329,8 @@ body {
 .button--rounded {
     @extend %button;
 
-    $border-size: 0.1em;
-    padding: 0.25em 0.4em;
+    $border-size: 0.1em;    
+    padding: 0.25em 0.25em;
     border-radius: 4px;
 
     // Prevents moving other elements
@@ -612,7 +612,7 @@ body {
     svg {
         fill: var(--ui-1);
     }
-
+    
     .logo {
 
         border: 0.1em solid transparent;

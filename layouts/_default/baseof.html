@@ -18,13 +18,13 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{ .Site.BaseURL }}/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.BaseURL }}/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.BaseURL }}/favicon/favicon-16x16.png">
-    <link rel="manifest" href="{{ .Site.BaseURL }}/favicon/site.webmanifest">
+    <!--<link rel="manifest" href="{{ .Site.BaseURL }}/favicon/site.webmanifest"> -->
     <link rel="mask-icon" href="{{ .Site.BaseURL }}/favicon/safari-pinned-tab.svg" color="#5bbad5">
 
     {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link type="text/css" rel="stylesheet" href="{{ $style.Permalink }}">
     {{ $syntax := resources.Get "sass/syntax.scss" | resources.ToCSS | resources.Minify }}
-    <link rel="stylesheet" href="{{ $syntax.Permalink }}">
+    <link type="text/css" rel="stylesheet" href="{{ $syntax.Permalink }}">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     {{ if .Site.Params.jsFolder }}

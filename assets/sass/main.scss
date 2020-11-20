@@ -11,7 +11,7 @@
 // * All of this have to be in rems else 
 //    I should have to use calc to mix ems and rems
 $nav-padding: 0.2rem;
-$nav-height: 2.75rem+$nav-padding*2;
+$nav-height: 2.65rem+$nav-padding*2;
 
 $article-margin: 1rem;
 
@@ -27,7 +27,7 @@ $total-width: 50rem+$centered-padding*2+11rem; // 11 rem for article-centered
 $media-big: $total-width+3rem - 11rem; // Layout change
 $media-mid: $media-big/2; // Font resize
 $media-small: 400px; // Padding removed
-$nav-toogle: 34rem;
+$nav-toogle: 22rem;
 
 // ### Standardization rules ###
 *,
@@ -302,14 +302,13 @@ button svg {
 .menu--navigation {
     @extend %menu;
     list-style-type: none;
-    padding: 0.125em;
     //font-size: 1rem;
 
     a,
     button {
         height: 2em;
         min-width: 2em;
-        font-size: 1em;
+        font-size: 0.85em;
         margin: 0 0.5em;
     }
 
@@ -322,9 +321,9 @@ button svg {
 // ### Buttons ###
 
 %button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
+    text-align: center;
+
     text-decoration: none;
 
     // Prevents moving other elements
@@ -604,6 +603,12 @@ button svg {
         fill: var(--ui-1);
     }
 
+    .button--rounded {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .logo {
         border: 0.1em solid transparent;
 
@@ -619,21 +624,23 @@ button svg {
             height: 2.2em;
         }
     }
-}
 
-.nav__toogle {
-    display: none;
-
-    @media only screen and (max-width: $nav-toogle) {
-        display: block;
-    }
-}
-
-.nav-hide {
-    @media only screen and (max-width: $nav-toogle) {
+    .nav__toogle {
         display: none;
+    
+        @media only screen and (max-width: $nav-toogle) {
+            display: flex;
+        }
+    }
+
+    .nav-hide {
+        @media only screen and (max-width: $nav-toogle) {
+            display: none;
+        }
     }
 }
+
+
 
 .accent {
     color: var(--accent);
@@ -766,6 +773,10 @@ button svg {
 
     .button--rounded {
         margin-top: 2em;
+    }
+
+    .button--rounded {
+        display: inline-block;
     }
 }
 

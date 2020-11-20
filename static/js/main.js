@@ -4,12 +4,20 @@
 
 var articleStart;
 var navHide;
-function loadDefParameters() {
+function loadDOMHandler() {
   //articleStart = ($('#hero').height() + $('#nav').height());
   articleStart = ($('#nav').height() + 100);
+
+  // Checks for the theme stored in the browser
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  }
 }
 
-document.addEventListener("DOMContentLoaded", loadDefParameters);
+
+
+document.addEventListener("DOMContentLoaded", loadDOMHandler);
 
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar 
     source https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
@@ -71,9 +79,11 @@ function themeSwitch() {
   let theme = document.documentElement.getAttribute('data-theme');
   if (theme == null || theme == 'light') {
     document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark'); //add this
   }
   else if (theme == 'dark') {
     document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light'); //add this
   }
 }
 

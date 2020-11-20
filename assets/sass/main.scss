@@ -10,13 +10,13 @@
 
 // * All of this have to be in rems else 
 //    I should have to use calc to mix ems and rems
-$nav-padding: 0.5rem;
+$nav-padding: 0.2rem;
 $nav-height: 2.75rem+$nav-padding*2;
 
 $article-margin: 1rem;
 
 $footer-padding: 1rem;
-$footer-height: 7.5rem+ $footer-padding*2;
+$footer-height: 7.5rem+$footer-padding*2;
 
 $centered-padding: 3rem;
 $total-width: 50rem+$centered-padding*2+11rem; // 11 rem for article-centered
@@ -52,7 +52,8 @@ span {
     font-family: 'Inter', sans-serif;
 }
 
-code, code * {
+code,
+code * {
     font-family: "monospace";
 }
 
@@ -104,10 +105,8 @@ img {
 
 // Remove outline and substitude it with border
 button:focus,
-a:focus {
+a:focus {}
 
-}
- 
 html {
     font-size: 16px;
 
@@ -123,6 +122,10 @@ body {
 
 body {
     background-color: var(--bg-0);
+}
+
+button svg {
+    display: block;
 }
 
 // ### General properties ### 
@@ -278,7 +281,7 @@ body {
     max-width: 45em;
     margin: 2em auto;
     */
-    
+
     @media only screen and (min-width: $media-big) {
         grid-template-columns: 0fr 1fr;
         grid-template-areas:
@@ -304,6 +307,8 @@ body {
 
     a,
     button {
+        height: 2em;
+        min-width: 2em;
         font-size: 1em;
         margin: 0 0.5em;
     }
@@ -315,44 +320,30 @@ body {
 }
 
 // ### Buttons ###
-%button {
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    background-color: transparent;
 
-    &:active {
-        background-color: var(--bg-1);
-    }
+%button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    // Prevents moving other elements
+    border: 0.1em solid transparent;
+    background-color: transparent;
 }
 
 .button--rounded {
     @extend %button;
 
-    $border-size: 0.1em;    
+    $border-size: 0.1em;
     padding: 0.25em 0.25em;
     border-radius: 4px;
 
-    // Prevents moving other elements
-    border: $border-size solid transparent;
-
-    &:hover {
-        border: $border-size solid var(--ui-1);
-    }
-
+    &:hover,
+    &:focus,
     &:active {
-        svg {
-            fill: var(--bg-1);
-        }
-
-        color: var(--bg-1);
-        background-color: var(--ui-1);
-    }
-
-    &:focus {
         outline: 0;
-        border: 0.1em solid var(--ui-1);
-        border-radius: 4px;
+        background-color: var(--bg-hl);
     }
 }
 
@@ -612,9 +603,8 @@ body {
     svg {
         fill: var(--ui-1);
     }
-    
-    .logo {
 
+    .logo {
         border: 0.1em solid transparent;
 
         &:hover,
@@ -629,8 +619,6 @@ body {
             height: 2.2em;
         }
     }
-
-
 }
 
 .nav__toogle {
@@ -968,7 +956,7 @@ body {
     .post-list__year {
         margin: 0.5em;
     }
-    
+
     .post-list__posts {
         margin: 0;
         padding: 0;
@@ -991,10 +979,7 @@ body {
 
         text-decoration: none;
     }
-    
 }
 
 // ### Post ### 
-.post {
-
-}
+.post {}

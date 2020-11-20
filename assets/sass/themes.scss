@@ -3,8 +3,9 @@
 
 :root {
     // Light
+    --bg-hl: #e5e9f0bf;
     --bg-0: #f2f4f8; // Darker Full Background
-    --bg-special: #f8f9fb; // Special background (Darker than bg-2, do not usually use)
+    --bg-special: #f8f9fb; // Special background (Darker than bg-1, do not usually use)
     --bg-1: #ffffff; // Normal background (UI prominent->put shadow, lighter than bg-1)
 
     --ui-0: #434C5E; // Darker (titles) 
@@ -47,8 +48,9 @@
 
 [data-theme="dark"] {
     // Dark
+    --bg-hl: #4c566a80;
     --bg-0: #242933; // Darker Full Background	// Probar 292e39
-    --bg-special: #292e39; // Special background (Lighter than bg-2, do not usually use)
+    --bg-special: #292e39; // Special background (Lighter than bg-1, do not usually use)
     --bg-1: #2e3440; // Lighter (UI prominent->put shadow, darker than bg-1)
 
     --ui-0: #eceff4; // Darker (titles)

@@ -29,6 +29,28 @@ $media-mid: $media-big/2; // Font resize
 $media-small: 400px; // Padding removed
 $nav-toogle: 22rem;
 
+
+@mixin shadow-strong {
+    box-shadow: 0 6px 10px var(--shadow-strong),
+        0 0 6px var(--shadow-strong);
+
+    &:hover {
+        box-shadow: 0 6px 15px var(--shadow-strong),
+            0 4px 8px var(--shadow-strong);
+    }
+}
+
+
+@mixin shadow-weak {
+    box-shadow: 0 6px 10px var(--shadow-weak),
+        0 0 6px var(--shadow-weak);
+
+    &:hover {
+        box-shadow: 0 6px 15px var(--shadow-weak),
+            0 4px 8px var(--shadow-weak);
+    }
+}
+
 // ### Standardization rules ###
 *,
 *::before,
@@ -176,6 +198,13 @@ button svg {
     align-items: center;
 }
 
+.container--flexcol {
+    @extend %container;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
 .container--flexrow--center {
     @extend .container--flexrow;
     justify-content: center;
@@ -186,6 +215,8 @@ button svg {
     justify-content: space-between;
     align-items: center;
 }
+
+
 
 .container--timeline-fr {
     @extend %container;
@@ -318,7 +349,7 @@ button svg {
     }
 }
 
-// ### Buttons ###
+// ### Buttons and Effects ###
 
 %button {
     display: inline-block;
@@ -333,8 +364,7 @@ button svg {
 
 .button--rounded {
     @extend %button;
-
-    $border-size: 0.1em;
+    
     padding: 0.25em 0.25em;
     border-radius: 4px;
 
@@ -400,16 +430,6 @@ button svg {
     @extend %text;
     font-family: 'Inter', sans-serif;
     line-height: 1.5em;
-}
-
-@mixin shadow-strong {
-    box-shadow: 0 6px 10px var(--shadow-strong),
-        0 0 6px var(--shadow-strong);
-
-    &:hover {
-        box-shadow: 0 6px 15px var(--shadow-strong),
-            0 4px 8px var(--shadow-strong);
-    }
 }
 
 // ### Cards ###
@@ -554,9 +574,14 @@ button svg {
 }
 
 // Shadow for the nav
-.shadow-strong {
-    @include shadow-strong();
+.shadow-weak {
+    @include shadow-weak();
 }
+
+.shadow-strong {
+    @include shadow-weak();
+}
+
 
 .centered-content {
     padding-left: $centered-padding;
@@ -597,6 +622,11 @@ button svg {
 
     ul {
         margin: 0;
+        padding: 0;
+    }
+    
+    li {
+        display: inline-block;
     }
 
     svg {
@@ -625,7 +655,7 @@ button svg {
         }
     }
 
-    .nav__toogle {
+    .nav-toogle {
         display: none;
     
         @media only screen and (max-width: $nav-toogle) {
@@ -633,14 +663,34 @@ button svg {
         }
     }
 
-    .nav-hide {
+    .nav-show {
         @media only screen and (max-width: $nav-toogle) {
             display: none;
         }
     }
+
+    .nav-hide {
+        background-color: var(--bg-0);;
+        width: 100%;
+        
+        position: absolute;
+        display: none;
+        overflow: hidden;
+        transition: min-height 0.25s linear;
+
+        // Toogle on / off on different screen sizes
+        @media only screen and (max-width: $nav-toogle) {
+            display: flex;
+            max-height: 0px;
+            min-height: 0px;
+        }
+
+        li {
+            width: 100%;
+        }
+    }
+    
 }
-
-
 
 .accent {
     color: var(--accent);
@@ -773,9 +823,6 @@ button svg {
 
     .button--rounded {
         margin-top: 2em;
-    }
-
-    .button--rounded {
         display: inline-block;
     }
 }
@@ -994,3 +1041,8 @@ button svg {
 
 // ### Post ### 
 .post {}
+
+.stop-scrolling { 
+    height: 100%; 
+    overflow: hidden; 
+} 

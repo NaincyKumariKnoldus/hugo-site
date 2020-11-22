@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", loadDOMHandler);
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar 
     source https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
 */
+
+
 var prevScrollpos = window.pageYOffset;
 window.onscroll = throttle(100, function () {
   var currentScrollPos = window.pageYOffset;
@@ -32,6 +34,8 @@ window.onscroll = throttle(100, function () {
   }
   prevScrollpos = currentScrollPos;
 });
+
+
 
 /* Add shadow 
 https://stackoverflow.com/questions/40967682/navbar-changing-to-add-shadow-on-scroll
@@ -86,4 +90,28 @@ function themeSwitch() {
     localStorage.setItem('theme', 'light'); //add this
   }
 }
+
+
+
+function disableScroll() { 
+  document.body.classList.add("stop-scrolling"); 
+} 
+
+function enableScroll() { 
+  document.body.classList.remove("stop-scrolling"); 
+} 
+
+function navToogle() {
+  let minHeight = document.getElementById("nav-links-extend").style.minHeight;
+  console.log(minHeight);
+  if (minHeight != "100vh") {
+    document.getElementById("nav-links-extend").style.minHeight = "100vh"
+    disableScroll();
+  }
+  else {
+    document.getElementById("nav-links-extend").style.minHeight = "0px";
+    enableScroll(); 
+  }
+}
+
 

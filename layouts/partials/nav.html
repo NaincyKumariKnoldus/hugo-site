@@ -13,9 +13,11 @@
                     </svg>
                 </button>
                 <ul id="nav-links" class="nav-show">
-                    <li><a href="{{.Site.BaseURL}}/career" class="button--rounded">Career</a></li>
+
                     <li><a href="{{.Site.BaseURL}}/projects" class="button--rounded">Projects</a></li>
                     <li><a href="{{.Site.BaseURL}}/posts" class="button--rounded">Posts</a></li>
+                    <li><a href="{{.Site.BaseURL}}/career" class="button--rounded">Career</a></li>
+                    <li><a href="{{.Site.BaseURL}}/contact-me" class="button--rounded">Contact Me</a></li>
                 </ul>
                 <button onclick="themeSwitch()" class="button--rounded">
                     <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,10 +28,13 @@
             </div>
         </div>
     </div>
-    <ul id="nav-links-extend" class="nav-hide container--flexcol">
-        <li><a href="{{.Site.BaseURL}}/career" class="button--rounded">Career</a></li>
-        <li><a href="{{.Site.BaseURL}}/projects" class="button--rounded">Projects</a></li>
-        <li><a href="{{.Site.BaseURL}}/posts" class="button--rounded">Posts</a></li>
-    </ul>
+    <div id="nav-links-extend" class="nav-links-extend nav-hide">
+        <ul class="container--flexcol">
+            <li><a href="{{.Site.BaseURL}}/projects" class="button--rounded">Projects</a></li>
+            <li><a href="{{.Site.BaseURL}}/posts" class="button--rounded">Posts</a></li>
+            <li><a href="{{.Site.BaseURL}}/career" class="button--rounded">Career</a></li>
+            <li><a href="{{.Site.BaseURL}}/contact-me" class="button--rounded">Contact Me</a></li>
+        </ul>
+    </div>
 </nav>
 

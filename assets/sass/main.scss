@@ -22,8 +22,9 @@ $total-width: 50rem+$centered-padding*2+5rem; // 11 rem for article-centered
 $media-big: $total-width+3rem - 11rem; // Layout change
 $media-mid: $media-big/2; // Font resize
 $media-small: 400px; // Padding removed
-$nav-toogle: 22rem;
-
+$nav-toogle: 35rem;
+$page-padding: 1rem; /* Padding for nav, footer and page-wrapper. 
+                        Needed bc of the stupid nav hamburguer position absolute */
 
 @mixin shadow-strong {
     box-shadow: 0 6px 10px var(--shadow-strong),
@@ -144,7 +145,7 @@ body {
 }
 
 body {
-    background-color: var(--bg-0);
+    background: var(--bg-0);
 }
 
 button svg {
@@ -357,7 +358,7 @@ button svg {
 
     // Prevents moving other elements
     border: 0.1em solid transparent;
-    background-color: transparent;
+    background: transparent;
 }
 
 .button--rounded {
@@ -370,7 +371,7 @@ button svg {
     &:focus,
     &:active {
         outline: 0;
-        background-color: var(--bg-hl);
+        background: var(--bg-hl);
     }
 }
 
@@ -443,7 +444,7 @@ button svg {
 
     padding: 1em 2em 1.2em 2em;
     border-radius: 4px;
-    background-color: var(--bg-1); // For all kind of cards
+    background: var(--bg-1); // For all kind of cards
 
     /*
     // I dont think this is needed
@@ -508,7 +509,7 @@ button svg {
 .page-wrapper,
 .nav,
 .footer {
-    padding: 0 1em;
+    padding: 0 $page-padding;
 
     @media only screen and (max-width: $media-small) {
         padding: 0;
@@ -525,7 +526,7 @@ button svg {
 
 .article {
     @include shadow-strong();
-    background-color: var(--bg-1);
+    background: var(--bg-1);
     border-radius: 5px;
     margin: $article-margin auto;
 }
@@ -604,7 +605,7 @@ button svg {
     top: 0;
     min-height: $nav-height;
     transition: top 0.3s; // Transition on scroll
-    background-color: var(--bg-0);
+    background: var(--bg-0);
 
     .centered-content {
         padding-top: $nav-padding;
@@ -670,23 +671,33 @@ button svg {
         }
     }
 
-    .nav-hide {
-        background-color: var(--bg-0);;
-        width: 100%;
-        
-        position: absolute;
-        display: none;
-        overflow: hidden;
-        transition: min-height 0.25s linear;
 
-        li {
-            width: 100%;
-        }
+
+    .nav-hide {
+        background: red;
+        min-height: calc(100vh - #{$nav-height});
+
+        width: inherit;
+        opacity: 0;
+        transition: opacity 0.2s linear;
+        position: absolute;
+        width: calc(100vw - #{$page-padding*2});
+        
+        display: none;
+
         // Toogle on / off on different screen sizes
         @media only screen and (max-width: $nav-toogle) {
-            display: flex;
-            max-height: 0px;
-            min-height: 0px;
+            display: block;
+        }
+
+        @media only screen and (max-width: $media-small) {
+            width: calc(100vw - #{$page-padding*2});
+        }
+
+        .container--flexcol {
+            justify-content: center;
+            align-items: center;
+            min-height: inherit;
         }
     }
 }
@@ -866,7 +877,7 @@ button svg {
 // ### Timeline ###
 .timeline {
     .timeline__bar {
-        background-color: var(--ui-1);
+        background: var(--ui-1);
     }
 
     .container--timeline-fr {
@@ -894,7 +905,7 @@ button svg {
         }
 
         .timeline__date .box--border {
-            background-color: var(--ui-1);
+            background: var(--ui-1);
             color: var(--bg-1);
         }
     }

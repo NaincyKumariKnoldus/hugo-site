@@ -102,16 +102,22 @@ function enableScroll() {
 } 
 
 function navToogle() {
-  let minHeight = document.getElementById("nav-links-extend").style.minHeight;
-  console.log(minHeight);
-  if (minHeight != "100vh") {
-    disableScroll();
-    document.getElementById("nav-links-extend").style.minHeight = "100vh"
+  let opacity = document.getElementById("nav-links-extend").style.opacity;
+  console.log(document.getElementById("nav-links-extend").style.opacity)
+  if (opacity == "0") {
+
+   disableScroll();
+
+    document.getElementById("nav-links-extend").style.opacity = "1";
+    console.log(document.getElementById("nav-links-extend").style.opacity)
   }
   else {
-    enableScroll(); 
-    document.getElementById("nav-links-extend").style.minHeight = "0px";
+
+
+       enableScroll(); 
+
+    document.getElementById("nav-links-extend").style.opacity = "0";
+    console.log(document.getElementById("nav-links-extend").style.opacity);
   }
 }
-
 

@@ -678,6 +678,9 @@ button svg {
         overflow: hidden;
         transition: min-height 0.25s linear;
 
+        li {
+            width: 100%;
+        }
         // Toogle on / off on different screen sizes
         @media only screen and (max-width: $nav-toogle) {
             display: flex;
@@ -685,9 +688,7 @@ button svg {
             min-height: 0px;
         }
 
-        li {
-            width: 100%;
-        }
+        
     }
     
 }

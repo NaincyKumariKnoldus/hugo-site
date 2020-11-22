@@ -104,20 +104,22 @@ function enableScroll() {
 function navToogle() {
   let opacity = document.getElementById("nav-links-extend").style.opacity;
   console.log(document.getElementById("nav-links-extend").style.opacity)
-  if (opacity == "0") {
-
-   disableScroll();
+  if (opacity != "1") {
+    disableScroll();
 
     document.getElementById("nav-links-extend").style.opacity = "1";
-    console.log(document.getElementById("nav-links-extend").style.opacity)
+
+    console.log(document.getElementById("nav-links-extend").style.opacity);
   }
   else {
 
 
-       enableScroll(); 
-
+    enableScroll(); 
     document.getElementById("nav-links-extend").style.opacity = "0";
-    console.log(document.getElementById("nav-links-extend").style.opacity);
+
+    console.log(document.getElementById("nav-links-extend").style.opacity)
+
+
   }
 }
 

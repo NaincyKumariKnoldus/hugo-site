@@ -674,14 +674,14 @@ button svg {
 
 
     .nav-hide {
-        background: red;
+        background: var(--bg-0);
         min-height: calc(100vh - #{$nav-height});
 
         width: inherit;
         opacity: 0;
         transition: opacity 0.2s linear;
         position: absolute;
-        width: calc(100vw - #{$page-padding*2});
+        width: calc(100% - #{$page-padding*2});
         
         display: none;
 
@@ -691,7 +691,7 @@ button svg {
         }
 
         @media only screen and (max-width: $media-small) {
-            width: calc(100vw - #{$page-padding*2});
+            width: 100%;
         }
 
         .container--flexcol {
@@ -1053,6 +1053,5 @@ button svg {
 .post {}
 
 .stop-scrolling { 
-    height: 100%; 
     overflow: hidden; 
 } 

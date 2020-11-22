@@ -105,12 +105,12 @@ function navToogle() {
   let minHeight = document.getElementById("nav-links-extend").style.minHeight;
   console.log(minHeight);
   if (minHeight != "100vh") {
-    document.getElementById("nav-links-extend").style.minHeight = "100vh"
     disableScroll();
+    document.getElementById("nav-links-extend").style.minHeight = "100vh"
   }
   else {
-    document.getElementById("nav-links-extend").style.minHeight = "0px";
     enableScroll(); 
+    document.getElementById("nav-links-extend").style.minHeight = "0px";
   }
 }
 

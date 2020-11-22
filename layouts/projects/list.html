@@ -1,10 +1,33 @@
 {{ define "title" }}
-  {{ .Title }} &ndash; {{ .Site.Title }}
+{{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
+
 {{ define "main" }}
+<header class="section--page-title">
+  <div class="centered-content">
+    <h1 class="section__title title--normal">Project list</h1>
+    <p class="section__subtitle">This are some of my projects</p>
+  </div>
+</header>
 <article id="article" class="article centered-content">
-    <div class="article-spacer">
-        Project list
-</div>
+  <div class="article-spacer">
+    <section id="post-list" class="post-list section">
+      {{ range .Pages.GroupByDate "2006" }}
+      <div class="container--post-list">
+        <h3 class="post-list__year">{{ .Key }}</h3>
+        <ul class="post-list__posts">
+          {{ range .Pages }}
+          <li class="post-item">
+            <a class="post-item__link" href="{{ .Params.externallink }}">
+              <span>{{ .Title }}</span>
+              <span>{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </section>
+  </div>
 </article>
 {{ end }}

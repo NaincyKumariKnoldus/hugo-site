@@ -1,12 +1,7 @@
-// TODO: Titles / subtitles style (rubik?)
-// TODO: Make nav en condiciones, con hamburguesa en @media pequeñas
-// TODO: Do hero. Flex doesnt work right tho (zoom+scroll), absolute fucks up the zoom
-// TODO: Partials en Hugo
-
-
 @import "fonts.scss";
 @import "themes.scss";
 @import "syntax.scss";
+
 
 // * All of this have to be in rems else 
 //    I should have to use calc to mix ems and rems
@@ -16,10 +11,10 @@ $nav-height: 2.65rem+$nav-padding*2;
 $article-margin: 1rem;
 
 $footer-padding: 1rem;
-$footer-height: 7.5rem+$footer-padding*2;
+$footer-height: 6.5rem+$footer-padding*2;
 
 $centered-padding: 3rem;
-$total-width: 50rem+$centered-padding*2+11rem; // 11 rem for article-centered
+$total-width: 50rem+$centered-padding*2+5rem; // 11 rem for article-centered
 
 // * Fix weird text resizing issues by adding 2 extra rem
 //      doesnt really make sense but you can see it works 
@@ -71,7 +66,13 @@ p,
 a,
 b,
 span {
-    font-family: 'Inter', sans-serif;
+    //font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
+}
+
+p {
+    line-height: 1.6;
 }
 
 code,
@@ -216,8 +217,6 @@ button svg {
     align-items: center;
 }
 
-
-
 .container--timeline-fr {
     @extend %container;
     display: grid;
@@ -350,7 +349,6 @@ button svg {
 }
 
 // ### Buttons and Effects ###
-
 %button {
     display: inline-block;
     text-align: center;
@@ -503,7 +501,7 @@ button svg {
 .page-wrapper {
     // Drags the footer down
     // *article top margin doesnt count as article height
-    min-height: calc(100vh - #{$article-margin + $footer-height + $nav-height});
+    min-height: calc(100vh - #{$footer-height} - #{$nav-height});
 
 }
 
@@ -544,6 +542,10 @@ button svg {
 .section--page-title {
     @extend .section;
     text-align: center;
+
+    .centered-content {
+        padding-bottom: 1.5rem;
+    }
 }
 
 .section-divider {
@@ -581,7 +583,6 @@ button svg {
 .shadow-strong {
     @include shadow-weak();
 }
-
 
 .centered-content {
     padding-left: $centered-padding;
@@ -687,10 +688,7 @@ button svg {
             max-height: 0px;
             min-height: 0px;
         }
-
-        
     }
-    
 }
 
 .accent {

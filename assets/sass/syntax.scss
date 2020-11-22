@@ -9,12 +9,19 @@ pre.highlight {
 
     &::-webkit-scrollbar {
         background: var(--bg-0);;;
+
     }
 
     &::-webkit-scrollbar-thumb {
         background: var(--ui-1);
+
     }
 } 
+
+// TOOD: This do be kinda weird
+.chroma {
+    padding: 0 1em;
+}
 
 .highlight {
     pre {

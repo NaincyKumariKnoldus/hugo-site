@@ -1,11 +1,33 @@
 ---
-title: "Post1"
-desc: "Sample description"
-date: 2020-10-27T23:43:25+01:00
+title: "Haskell or not"
+desc: "Either it is or it's not"
+date: 2020-10-26T23:43:25+01:00
 author: "noAuthor"
 categories: ["Undefined"]
 draft: true
 private: false
 ---
-Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N del T persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
-Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+
+This is haskell
+
+```hs
+fizz :: Int -> String
+fizz n | n `mod` 15 == 0  = "FizzBuzz"
+       | n `mod` 3  == 0  = "Fizz"
+       | n `mod` 5  == 0  = "Buzz"
+       | otherwise        = show n
+
+main :: IO ()
+main = mapM_ putStrLn $ map fizz [1..100]
+```
+
+This is not 
+
+```c
+#include <stdio.h>
+int main() {
+    // printf() displays the string inside quotation
+    printf("Hello, World!");
+    return 0;
+}
+```

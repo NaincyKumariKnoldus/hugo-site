@@ -75,7 +75,7 @@
 	*/
 }
 
-// Fill color classes 
+// Fill color classes for svgs
 .fill {
     &--bg-0 {
         fill: var(--bg-0);
@@ -141,41 +141,3 @@
         fill: var(--purple);
     }
 }
-
-
-
-/*
-// OLD COLORS
-:root {
-	// Dark Theme
-	--dark-bg-1: #292E39;
-	--dark-bg-2: #2E3440;
-	--dark-fg-1: rgb(236, 239, 244);
-	--dark-fg-2: rgb(229, 233, 240);
-	--light-shadow-1: rgb(236, 239, 244 6%);
-
-	// Light Theme
-	--light-bg-1: #ECEFF4;
-	--light-bg-2: #F8F9FB;
-	--light-fg-1: rgb(46, 52, 64);
-	--light-fg-2: rgb(59, 66, 82);
-	--light-shadow-1: rgb(46, 52, 64, 6%);
-	
-	// Accent colors
-	--accent-1: #BF616A;
-	--accent-2: #BF616A;
-
-	// Blues
-	--blue-1: #8FBCBB;
-	--blue-2: #88C0D0;
-	--blue-3: #81A1C1;
-	--blue-4: #5E81AC;
-
-	// Other colors
-	--red: #BF616A;
-	--orange: #D08770;
-	--yellow: #EBCB8B;
-	--green: #A3BE8C;
-	--purple: #B48EAD;
-}
-*/

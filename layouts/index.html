@@ -94,53 +94,7 @@
             </div>
         </div>
     </section>
-    <div class="section-divider"></div>
-    <section id="my-work" class="my-work section">
-        <h2 class="section__title my-work__title title--normal">My Work</h2>
-        <div class="my-work__projects">
-            <h3 class="subsection__title title--normal">Projects</h3>
-            <p class="subsection__subtitle text--linespaced">This are some of my recent projects.</p>
-            <div class="container--grid2col">
-                {{ range first 3  (where .Site.RegularPages "Section" "projects")  }}
-                <!-- If external link exists in projects matter -->
-                {{ if isset .Params "externallink" }}
-                <a href="{{ .Params.externallink }}" class="card cardbg--linux" target="_blank">
-                    <h3 class="title--normal">{{ .Title }}</h3>
-                    <p class="text--normal">
-                        {{ .Description }}
-                    </p>
-                </a> 
-                <!-- Else show internal projects page -->
-                {{ else }}
-                <a  href="{{ .Permalink }}" class="card cardbg--linux" target="_blank">
-                    <h3 class="title--normal">{{ .Title }}</h3>
-                    <p class="text--normal">{{ .Title }}</p>
-                </a>
-                {{ end }}
-                {{ end }}
-            </div>
-        </div>
-        <div class="centered"><a href="{{.Site.BaseURL}}/projects" class="button--rounded">See more</a></div>
-        <div class="my-work__posts">
-            <h3 class="subsection__title title--rounded">Posts</h3>
-            <p class="subsection__subtitle text--linespaced">Sometimes I write stuff. Usually my posts are
-                related to what I’m working on at the moment or my hobbies.</p>
-            <div class="container--grid1col">
 
-                {{ range first 2  (where .Site.RegularPages "Section" "posts")  }}
-                <a href="{{ .Permalink }}" class="card cardbg--blank">
-                    <h3 class="title--normal">{{ .Title }}</h3>
-                    <p class="text--normal">
-                        {{ .Summary }}
-                    </p>
-                </a>
-                {{ end }}
-
-
-            </div>
-        </div>
-        <div class="centered"><a href="{{.Site.BaseURL}}/posts" class="button--rounded">See more</a></div>
-    </section>
 </div>
 </article>
 

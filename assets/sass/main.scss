@@ -36,7 +36,6 @@ $page-padding: 1rem; /* Padding for nav, footer and page-wrapper.
     }
 }
 
-
 @mixin shadow-weak {
     box-shadow: 0 6px 10px var(--shadow-weak),
         0 0 6px var(--shadow-weak);
@@ -61,6 +60,7 @@ h4,
 h5,
 h6 {
     font-family: 'Rubik', sans-serif;
+    margin-top: 0;
 }
 
 p,
@@ -218,50 +218,6 @@ button svg {
     align-items: center;
 }
 
-.container--timeline-fr {
-    @extend %container;
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-        "title date"
-        "desc desc ";
-
-    @media only screen and (min-width: $media-big) {
-        grid-template-columns: 1fr 0.25em 1fr;
-        grid-template-areas:
-            "a1 a2 a3"
-            "a4 a2 a6";
-    }
-}
-
-.container--timeline-ev {
-    @extend %container;
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-        "title date";
-
-    @media only screen and (min-width: $media-big) {
-        grid-template-columns: 1fr 0.25em 1fr;
-        grid-template-areas:
-            "a1 a2 a3";
-    }
-}
-
-.container--timeline-end {
-    @extend %container;
-
-    @media only screen and (min-width: $media-big) {
-        display: grid;
-        grid-template-columns: 1fr 0.25em 1fr;
-        grid-template-areas:
-            "image image image"
-            "a4 a2 a6";
-    }
-}
-
 %container--grid2area {
     @extend %container;
 
@@ -375,18 +331,6 @@ button svg {
     }
 }
 
-// ### Boxes ###
-%box {
-    // !!! Placeholder
-    box-sizing: border-box;
-}
-
-.box--border {
-    @extend %box;
-    padding: 0.5em;
-    border: 0.1em solid var(--ui-1);
-}
-
 // ### Text and Titles ###
 %title {
     font-family: 'Rubik';
@@ -431,73 +375,6 @@ button svg {
     line-height: 1.5em;
 }
 
-// ### Cards ###
-.card {
-    @include shadow-strong;
-
-    text-decoration: none;
-    font-size: 1rem;
-    min-height: 10em;
-    width: 100%;
-    height: 100%;
-    text-align: left;
-
-    padding: 1em 2em 1.2em 2em;
-    border-radius: 4px;
-    background: var(--bg-1); // For all kind of cards
-
-    /*
-    // I dont think this is needed
-    img {
-        position: absolute;
-        top: 20px;
-        right: 15px;
-        max-height: 120px;
-    }
-    */
-
-    &:hover,
-    &:focus,
-    &:active {
-        outline: none;
-        border: none;
-        transform: scale(1.02);
-    }
-
-    h2,
-    h3,
-    p {
-        color: var(--ui-1);
-    }
-}
-
-%cardbg {
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 5em;
-    padding-right: 6em;
-}
-
-.cardbg--blank {
-    @extend %cardbg;
-    background-image: url('/assets/blank.svg');
-}
-
-.cardbg--terminal {
-    @extend %cardbg;
-    background-image: url('/assets/terminal.svg');
-}
-
-.cardbg--programming {
-    @extend %cardbg;
-    background-image: url('/assets/programming.svg');
-}
-
-.cardbg--linux {
-    @extend %cardbg;
-    background-image: url('/assets/linux.svg');
-}
-
 // ### Layout stuff ### 
 .page-wrapper {
     // Drags the footer down
@@ -534,6 +411,17 @@ button svg {
 .article-spacer {
     width: 85%;
     margin: 2rem auto;
+}
+
+.centered-content {
+    padding-left: $centered-padding;
+    padding-right: $centered-padding;
+    max-width: $total-width;
+
+    @media only screen and (max-width: $media-small) {
+        padding-left: $centered-padding/2;
+        padding-right: $centered-padding/2;
+    }
 }
 
 .section {
@@ -574,27 +462,6 @@ button svg {
     color: var(--ui-1);
     margin: 1.125em auto;
     max-width: 70%;
-}
-
-// Shadow for the nav
-.shadow-weak {
-    @include shadow-weak();
-}
-
-.shadow-strong {
-    @include shadow-weak();
-}
-
-.centered-content {
-    padding-left: $centered-padding;
-    padding-right: $centered-padding;
-    max-width: $total-width;
-
-    @media only screen and (max-width: $media-small) {
-        padding-left: $centered-padding/2;
-        padding-right: $centered-padding/2;
-    }
-
 }
 
 // ### Nav Menu ### 
@@ -702,6 +569,15 @@ button svg {
     }
 }
 
+// Shadow for the nav
+.nav-shadow {
+    @include shadow-weak();
+}
+
+.stop-scrolling { 
+    overflow: hidden; 
+} 
+
 .accent {
     color: var(--accent);
 }
@@ -724,6 +600,7 @@ button svg {
         // Font override
         //font-size: 1rem;
         text-align: center;
+        max-width: 75%;
 
         h1 {
             // Font override 
@@ -752,6 +629,10 @@ button svg {
         svg {
             fill: var(--ui-1);
         }
+    }
+
+    .hero__image {
+        margin-bottom: 1.8em;
     }
 }
 
@@ -817,26 +698,6 @@ button svg {
     }
 }
 
-// ### My Work ### 
-.my-work {
-
-    .section__title,
-    .subsection__title,
-    .subsection__subtitle {
-        text-align: center;
-    }
-
-    .my-work__posts {
-        // Simulate section
-        margin-top: $centered-padding;
-    }
-
-    .button--rounded {
-        margin-top: 2em;
-        display: inline-block;
-    }
-}
-
 // ### Footer ###
 .footer {
     min-height: $footer-height;
@@ -871,146 +732,6 @@ button svg {
 
     .border {
         fill: var(--ui-1);
-    }
-}
-
-// ### Timeline ###
-.timeline {
-    .timeline__bar {
-        background: var(--ui-1);
-    }
-
-    .container--timeline-fr {
-        .box--border {
-            display: inline-block;
-        }
-
-        .timeline__date {
-            text-align: right;
-        }
-
-        .timeline__date,
-        .timeline__title,
-        .timeline__description {
-            margin: 1em;
-        }
-
-        .timeline__description {
-            margin-bottom: 1.5em;
-        }
-
-        .timeline__date,
-        .timeline__title {
-            margin-top: 1.5em;
-        }
-
-        .timeline__date .box--border {
-            background: var(--ui-1);
-            color: var(--bg-1);
-        }
-    }
-
-
-    .container--timeline-end {
-        .timeline__image {
-            display: none;
-
-            svg {
-                height: 5em;
-            }
-
-            // Show the image
-            @media only screen and (min-width: $media-big) {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: flex-end;
-            }
-        }
-
-        // Show a bar
-        @media only screen and (min-width: $media-big) {
-            .timeline__bar {
-                min-height: 3em;
-            }
-        }
-    }
-
-    // Grid areas
-    .timeline__bar {
-        grid-area: a2;
-    }
-
-    .container--timeline-fr {
-        .timeline__title {
-            grid-area: title;
-        }
-
-        .timeline__description {
-            grid-area: desc;
-        }
-
-        .timeline__date {
-            grid-area: date;
-        }
-    }
-
-    .container--timeline-ev {
-        .timeline__title {
-            grid-area: title;
-        }
-
-        .timeline__date {
-            grid-area: date;
-        }
-    }
-
-    .container--timeline-end {
-        .timeline__image {
-            grid-area: image;
-        }
-    }
-
-    @media only screen and (min-width: $media-big) {
-
-        // Align items to the bar
-        .timeline-right .timeline__title,
-        .timeline-right .timeline__description,
-        .timeline-left .timeline__date {
-            text-align: right;
-        }
-
-        .timeline-right .timeline__date {
-            text-align: left;
-        }
-
-        .timeline-right {
-            .timeline__title {
-                grid-area: a1;
-            }
-
-            .timeline__description {
-                grid-area: a4;
-            }
-
-            .timeline__date {
-                grid-area: a3;
-            }
-        }
-
-        .timeline-left {
-            .timeline__title {
-                grid-area: a3;
-            }
-
-            .timeline__description {
-                grid-area: a6;
-            }
-
-            .timeline__date {
-                grid-area: a1;
-            }
-        }
     }
 }
 
@@ -1051,7 +772,3 @@ button svg {
 
 // ### Post ### 
 .post {}
-
-.stop-scrolling { 
-    overflow: hidden; 
-} 

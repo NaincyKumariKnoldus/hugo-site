@@ -61,10 +61,10 @@ $(window).scroll(
     function () {
     // let height = ($('#hero').height() + $('#nav').height());
       if ($(window).scrollTop() >= articleStart) {
-        $('nav').addClass('shadow-strong');
+        $('nav').addClass('nav-shadow');
       }
       else {
-        $('nav').removeClass('shadow-strong');
+        $('nav').removeClass('nav-shadow');
       }
 }));
 

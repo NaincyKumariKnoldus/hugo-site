@@ -1,0 +1,284 @@
+@import "colors.scss";
+
+.highlight,
+pre.highlight {
+    background: var(--bg-0);;
+    color: var(--ui-2);;
+    overflow: auto;
+    margin: 1em 0;
+
+    &::-webkit-scrollbar {
+        background: var(--bg-0);;;
+
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--ui-1);
+
+    }
+} 
+
+// TOOD: This do be kinda weird
+.chroma {
+    padding: 0 1em;
+}
+
+.highlight {
+    pre {
+        background: var(--bg-0);
+    }
+
+    .hll {
+        background: var(--bg-0);
+    }
+
+    .c {
+        color: var(--ui-1);;
+        font-style: italic
+    }
+
+    .err {
+        color: var(--red);
+        background-color: #1e0010
+    }
+
+    .k {
+        color: var(--purple);
+    }
+
+    .l {
+        color: var(--green);
+    }
+
+    .n {
+        color: var(--ui-2);
+    }
+
+    .o {
+        color: var(--ui-2);
+    }
+
+    .p {
+        color: var(--ui-1);
+    }
+
+    .cm {
+        color: var(--ui-1);;
+        font-style: italic
+    }
+
+    .cp {
+        color: var(--ui-1);;
+        font-style: italic
+    }
+
+    .c1 {
+        color: var(--ui-1);;
+        font-style: italic
+    }
+
+    .cs {
+        color: var(--ui-1);;
+        font-style: italic
+    }
+
+    .ge {
+        font-style: italic
+    }
+
+    .gs {
+        font-weight: 700
+    }
+
+    .kc {
+        color: var(--purple);
+    }
+
+    .kd {
+        color: var(--purple);
+    }
+
+    .kn {
+        color: var(--purple);
+    }
+
+    .kp {
+        color: var(--purple);
+    }
+
+    .kr {
+        color: var(--purple);
+    }
+
+    .kt {
+        color: var(--purple);
+    }
+
+    .ld {
+        color: var(--green);
+    }
+
+    .m {
+        color: var(--orange);
+    }
+
+    .s {
+        color: var(--green);
+    }
+
+    .na {
+        color: var(--orange);
+    }
+
+    .nb {
+        color: var(--yellow);
+    }
+
+    .nc {
+        color: var(--yellow);
+    }
+
+    .no {
+        color: var(--yellow);
+    }
+
+    .nd {
+        color: var(--yellow);
+    }
+
+    .ni {
+        color: var(--yellow);
+    }
+
+    .ne {
+        color: var(--yellow);
+    }
+
+    .nf {
+        color: var(--ui-2);
+    }
+
+    .nl {
+        color: var(--yellow);
+    }
+
+    .nn {
+        color: var(--ui-2);
+    }
+
+    .nx {
+        color: var(--ui-2);
+    }
+
+    .py {
+        color: var(--yellow);
+    }
+
+    .nt {
+        color: var(--red);
+    }
+
+    .nv {
+        color: var(--yellow);
+    }
+
+    .ow {
+        font-weight: 700
+    }
+
+    .w {
+        color: var(--ui-2);
+    }
+
+    .mf {
+        color: var(--orange);
+    }
+
+    .mh {
+        color: var(--orange);
+    }
+
+    .mi {
+        color: var(--orange);
+    }
+
+    .mo {
+        color: var(--orange);
+    }
+
+    .sb {
+        color: var(--green);
+    }
+
+    .sc {
+        color: var(--green);
+    }
+
+    .sd {
+        color: var(--green);
+    }
+
+    .s2 {
+        color: var(--green);
+    }
+
+    .se {
+        color: var(--green);
+    }
+
+    .sh {
+        color: var(--green);
+    }
+
+    .si {
+        color: var(--green);
+    }
+
+    .sx {
+        color: var(--green);
+    }
+
+    .sr {
+        color: var(--blue2);
+    }
+
+    .s1 {
+        color: var(--green);
+    }
+
+    .ss {
+        color: var(--blue2);
+    }
+
+    .bp {
+        color: var(--yellow);
+    }
+
+    .vc {
+        color: var(--yellow);
+    }
+
+    .vg {
+        color: var(--yellow);
+    }
+
+    .vi {
+        color: var(--red);
+    }
+
+    .il {
+        color: var(--orange);
+    }
+
+    .gu {
+        color: var(--ui-1);
+    }
+
+    .gd {
+        color: var(--red);
+    }
+
+    .gi {
+        color: var(--green);
+    }
+}

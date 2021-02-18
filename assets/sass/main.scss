@@ -1,27 +1,7 @@
+@import "layout.scss";
+@import "scrollbar.scss";
 @import "normalize.scss";
 @import "typography.scss";
 @import "colors.scss";
 @import "syntax.scss";
 
-
-// Layout stuff
-body {
-    background: orange;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    min-height: 100vh;
-}
-
-header {
-    background: red;
-}
-
-main {
-    flex: 1;
-    background: blue;
-}
-
-footer {
-    background: yellow;
-}

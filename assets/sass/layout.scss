@@ -1,0 +1,33 @@
+
+// Layout stuff
+body {
+    background: orange;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0 1rem;
+
+    >header,
+    >main,
+    >footer {
+        width: 61rem;
+        margin: auto;
+    }
+}
+
+
+
+header {
+    background: red;
+}
+
+main {
+    flex: 1;
+    background: blue;
+}
+
+footer {
+    background: yellow;
+}

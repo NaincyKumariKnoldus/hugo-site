@@ -1,10 +1,54 @@
 {{ define "main" }}
 <section id="hero">
     <div class="page-centered">
-        Hero
+        <span>Hero</span>
     </div>
 </section>
 <main>
-    <div class="page-centered"></div>
+    <section class="page-centered">
+        <div id="whoami">
+            <div id="whoami__info1" class="whoami__info">
+                {{ partial "svg/person.svg" . }}
+                <p>
+                    I’m <strong>Pedro Burgos</strong>, or Druskus, as I name myself online. I’m (almost) a
+                    <strong>Computer Engineer</strong>
+                    from Madrid, Spain.
+                </p>
+            </div>
+            <div id="whoami__info2" class="whoami__info">
+                {{ partial "svg/studies.svg" . }}
+                <p>
+                    I’m currently finishing a degree in <strong>Computer Science at Universidad Autónoma de
+                        Madrid</strong>
+                    and I plan to continue further this road by studying a masters degree. At the same time,
+                    I’m taking <strong>english lessons</strong> at one of the <strong>Official School of
+                        Languages</strong> of my city.
+                </p>
+            </div>
+            {{ partial "svg/whoami__image1.svg" . }}
+            <div id="whoami__info3" class="whoami__info">
+                {{ partial "svg/code.svg" . }}
+
+                <p>
+                    I also enjoy working on my own projects, usually related to my field and involving some
+                    kind of programming. Right now I’m getting into <strong>Rust and Shell
+                        Scripting</strong>.
+                </p>
+            </div>
+            <div id="whoami__info4" class="whoami__info">
+                {{ partial "svg/heart.svg" . }}
+    
+                <p>
+                    Apart from that, I enjoy spending my time playing <strong>video games</strong> while
+                    either listening to
+                    some of my favourite <strong>music</strong> or talking to my friends online. I enjoy
+                    <strong>reading books</strong> aswell
+                    although I dont do it as often as I should. I’m currently focused on reading more,
+                    aswell as <strong>getting into exercising.</strong>
+                </p>
+            </div>
+            {{ partial "svg/whoami__image2.svg" . }}
+    </section>
+    </section>
 </main>
 {{ end }}

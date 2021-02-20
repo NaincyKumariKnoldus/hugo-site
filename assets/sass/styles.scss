@@ -3,19 +3,17 @@ $media-mid: $media-big/2; // Font resize
 $media-small: 400px; // Padding removed
 
 
-@import "__normalize.scss";
-@import "__colors.scss";
-@import "__layout.scss";
-
-@import "__mainpage.scss";
-@import "__pagelist.scss";
-@import "__article.scss";
-
-@import "__typography.scss";
-@import "__scrollbar.scss";
-@import "__navigation.scss";
-@import "__buttons.scss";
-@import "__code.scss";
+@import "normalize";
+@import "colors";
+@import "layout";
+@import "landingpage";
+@import "pagelist";
+@import "article";
+@import "typography";
+@import "scrollbar";
+@import "navigation";
+@import "buttons";
+@import "code";
 
 
 

@@ -1,5 +1,5 @@
 body {
-    background-color: #151922;
+    background: var(--bg-0);
 }
 header {
     background: var(--bg-0);
@@ -13,6 +13,13 @@ footer {
     background: var(--bg-0);
 }
 
-p, h1, h2, h3, h4 {
-    color: white;
+p {
+    color: var(--ui-1);
 }
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--ui-0);
+}
+
+// background-color: #151922;

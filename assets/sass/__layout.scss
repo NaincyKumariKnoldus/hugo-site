@@ -4,32 +4,33 @@ body {
     min-height: 100vh;
     margin: 0;
 
-
-    > main {
-        flex: 1;
-    }
     > header, > section#hero, > main, > footer {
         padding: 0 1rem;
+
+        
+        @media only screen and (max-width: $media-small) {
+            padding: 0;
+        }
     }
     
-    .page-centered  {
-        max-width: 61rem;
-        margin: auto;    
-    }
-
     > header {
+        z-index: 10; // Max z index
+        position: sticky;
+        top: 0;
+        transition: top 0.3s; // Transition on scroll
+        
+
         > .page-centered {
+            padding: 0 3rem;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
         }
 
-
         .flex-spacer {
             flex:1;
         }
-        
 
         #header__logo > svg {
             width: 2.2em;
@@ -37,14 +38,31 @@ body {
         }
     }
 
-    article {
-        padding: 2rem;
+    > main {
+        flex: 1;
+        
+        > article {
+            @include shadow-weak();
+            padding: 2rem;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
     }
 
     > footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
+
+    .page-centered  {
+        max-width: 61rem;
+        margin-right: auto;    
+        margin-left: auto;
+    }
+
+    .header-shadow {
+        @include shadow-weak();
     }
 }
 

@@ -63,4 +63,22 @@ $colors_dark: (
     }
 }
 
- 
+@mixin shadow-strong {
+    box-shadow: 0 6px 10px var(--shadow-strong),
+        0 0 6px var(--shadow-strong);
+
+    &:hover {
+        box-shadow: 0 6px 15px var(--shadow-strong),
+            0 4px 8px var(--shadow-strong);
+    }
+}
+
+@mixin shadow-weak {
+    box-shadow: 0 6px 10px var(--shadow-weak),
+        0 0 6px var(--shadow-weak);
+
+    &:hover {
+        box-shadow: 0 6px 15px var(--shadow-weak),
+            0 4px 8px var(--shadow-weak);
+    }
+}

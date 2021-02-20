@@ -1,12 +1,11 @@
 {{ define "title" }}
-  {{ .Title }} &ndash; {{ .Site.Title }}
+{{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 {{ define "main" }}
 <main>
-
-    <div class="page-centered">
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-    </div>
+  <article class="page-centered">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+  </article>
 </main>
 {{ end }}

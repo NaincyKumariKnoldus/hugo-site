@@ -4,10 +4,10 @@ body {
     min-height: 100vh;
     margin: 0;
 
+
     > main {
         flex: 1;
     }
-
     > header, > section#hero, > main, > footer {
         padding: 0 1rem;
     }
@@ -25,8 +25,15 @@ body {
             justify-content: space-between;
         }
 
-        #header__logo {
+
+        .flex-spacer {
             flex:1;
+        }
+        
+
+        #header__logo > svg {
+            width: 2.2em;
+            height: 2.2em;
         }
     }
 

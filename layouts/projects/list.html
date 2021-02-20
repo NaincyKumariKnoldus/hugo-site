@@ -1,7 +1,16 @@
 {{ define "title" }}
-{{ .Title }} &ndash; {{ .Site.Title }}
+  {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
-
 {{ define "main" }}
-
+<main>
+    <div class="page-centered">
+  <h1>List</h1>
+  {{ range .Pages }}
+    <article>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      
+    </article>
+  {{ end }}
+</div>
+</main>
 {{ end }}

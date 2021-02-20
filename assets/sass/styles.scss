@@ -6,6 +6,11 @@ $media-small: 400px; // Padding removed
 @import "__normalize.scss";
 @import "__colors.scss";
 @import "__layout.scss";
+
+@import "__mainpage.scss";
+@import "__pagelist.scss";
+@import "__article.scss";
+
 @import "__typography.scss";
 @import "__scrollbar.scss";
 @import "__navigation.scss";

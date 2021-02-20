@@ -4,7 +4,7 @@ body {
     min-height: 100vh;
     margin: 0;
 
-    > header, > section#hero, > main, > footer {
+    > header, > section, > main, > footer {
         padding: 0 1rem;
 
         
@@ -40,13 +40,6 @@ body {
 
     > main {
         flex: 1;
-        
-        > article {
-            @include shadow-weak();
-            padding: 2rem;
-            margin-bottom: 2rem;
-            margin-top: 2rem;
-        }
     }
 
     > footer {

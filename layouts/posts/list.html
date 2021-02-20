@@ -5,11 +5,16 @@
 <main>
     <div class="page-centered">
   <h1>List</h1>
+  <section class="pagelist">
   {{ range .Pages }}
-    <article>
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </article>
+
+      <div class="pagelist__item">
+        <a class="pagelist__item__date" href="{{ .Permalink }}">{{ .Date.Format "January 2, 2006" }}</a>
+        <a class="pagelist__item__title" href="{{ .Permalink }}">{{ .Title }}</a>
+      </div>   
+
   {{ end }}
+</section>
 </div>
 </main>
 {{ end }}

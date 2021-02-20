@@ -1,8 +1,9 @@
-@import "layout.scss";
-@import "scrollbar.scss";
-@import "normalize.scss";
-@import "typography.scss";
-@import "colors.scss";
-@import "syntax.scss";
+@import "__layout.scss";
+@import "__scrollbar.scss";
+@import "__normalize.scss";
+@import "__typography.scss";
+@import "__colors.scss";
+@import "__syntax.scss";
+@import "__navigation.scss";
 
-@import "debug.scss";
+@import "__debug.scss";

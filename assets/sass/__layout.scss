@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+
+    > main {
+        flex: 1;
+    }
+
+    > header, > section#hero, > main, > footer {
+        padding: 0 1rem;
+    }
+    
+    .page-centered  {
+        max-width: 61rem;
+        margin: auto;    
+    }
+
+    > header {
+        > .page-centered {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #header__logo {
+            flex:1;
+        }
+    }
+
+    article {
+        padding: 2rem;
+    }
+
+    > footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+

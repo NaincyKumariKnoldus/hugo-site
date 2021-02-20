@@ -1,5 +1,5 @@
 body {
-    background: var(--bg-0);
+    background-color: #151922;
 }
 header {
     background: var(--bg-0);
@@ -11,4 +11,8 @@ main>.page-centered {
 
 footer {
     background: var(--bg-0);
+}
+
+p, h1, h2, h3, h4 {
+    color: white;
 }

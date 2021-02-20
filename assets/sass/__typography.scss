@@ -4,6 +4,7 @@ h3,
 h4,
 h5,
 h6 {
+    
     margin-top: 0;
     margin-bottom: 0.5em;
     font-weight: normal;
@@ -14,6 +15,9 @@ h6 {
     }
 }
 
+p:not(:first-child) {
+    margin-top: 0;
+}
 
 h1 {
     font-size: 3rem;

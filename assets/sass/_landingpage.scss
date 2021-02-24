@@ -1,0 +1,61 @@
+main {
+    #hero {
+
+    }
+
+    .whoami {
+        width: 80%;
+    
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        gap: 1em 2em;
+        margin: 2em auto;
+        justify-items: center;
+        align-items: center;
+
+        &#whoami1 {
+            grid-template-columns: 1fr 0.50fr;
+            grid-template-areas:
+                "info1 image"
+                "info2 image"
+        }
+     
+        &#whoami2 {
+            grid-template-columns: 0.50fr 1fr;
+            grid-template-areas:
+                "image info1"
+                "image info2";
+        }
+        
+        .whoami__info {
+            display: flex;
+
+            > svg {
+                min-width: 1.8em;
+                min-height: 1.8em;
+                width: 1.8em;
+                height: 1.8em;
+                margin-right: 1em;
+                fill: var(--ui-1);
+            }
+
+            &#whoami1__info1, &#whoami2__info1 {
+                grid-area: info1;
+            }
+            &#whoami1__info2, &#whoami2__info2 {
+                grid-area: info2;
+            }
+        }
+
+        > svg {
+
+            width: 100%;
+           
+
+            &#whoami2__image, &#whoami1__image {
+                grid-area: image;
+            }
+        }
+    }
+}

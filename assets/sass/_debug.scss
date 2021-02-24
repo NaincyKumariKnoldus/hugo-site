@@ -1,0 +1,30 @@
+body {
+    background: var(--bg-0);
+}
+header {
+    background: var(--bg-0);
+}
+
+main > article {
+    background: var(--bg-1);
+}
+
+footer {
+    background: var(--bg-0);
+}
+
+p {
+    color: var(--ui-1);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--ui-0);
+}
+
+p, a, b, span, button {
+    font-family: "Inter", sans-serif;
+    color: var(--ui-1);
+}
+
+// background-color: #151922;

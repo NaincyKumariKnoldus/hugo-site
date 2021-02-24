@@ -1,0 +1,36 @@
+.pagelist {
+    display: flex;
+    flex-direction: column;
+
+    > .pagelist__item {
+        padding: 1rem 1rem 1rem 3.5rem;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+
+        > .pagelist__item__date {
+            display: inline-block;
+            min-width: 20%;
+            width: 20%;
+        }
+
+        &::before, &::after {
+            left: 1rem; 
+            top: 0;
+            position: absolute;
+            height: 50%;
+            width: 1.5rem;
+            content: "";
+        }
+
+        &::before { 
+            border-left: 1px solid var(--ui-1);
+            border-bottom: 1px solid var(--ui-1);
+        }
+
+        &:not(:last-child)::after {
+            top: 50%;
+            border-left: 1px solid var(--ui-1);
+        }
+    }
+}

@@ -1,0 +1,6 @@
+main > article {
+    @include shadow-weak();
+    padding: 3rem 5rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}

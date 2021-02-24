@@ -1,0 +1,79 @@
+// ## Theme colors ## 
+// Gotten from: https://www.nordtheme.com
+$colors: (
+    // Blues
+    "blue-0": #8FBCBB,
+    "blue-1": #88C0D0,
+    "blue-2": #81A1C1,
+    "blue-3": #5E81AC,
+    // Accent colors
+    "accent": #5E81AC,
+    // Other colors
+    "red": #BF616A,
+    "orange": #D08770,
+    "yellow": #EBCB8B,
+    "green": #A3BE8C,
+    "purple": #B48EAD,
+);
+
+$colors_light: (
+    "bg-hl": #e5e9f0bf,
+    "bg-0": #f2f4f8,        // Darker Full Background
+    "bg-special": #f8f9fb,  // Special background (Darker than bg-1, do not usually use)
+    "bg-1": #ffffff,        // Normal background (UI prominent->put shadow, lighter than bg-1"
+    "ui-0": #434C5E,        // Darker (titles) 
+    "ui-1": #4C566A,        // Lighter (normal text)
+    "ui-2": #7b88a1,        // Light bluish (lighter text"
+    "shadow-strong": rgba(184, 194, 215, 0.35),
+    "shadow-weak": rgba(184, 194, 215, 0.15),
+);
+ 
+$colors_dark: (
+  // Dark
+  "bg-hl": #4c566a80,
+  "bg-0": #242933,          // Darker Full Background	// Probar 292e39
+  "bg-special": #292e39,    // Special background (Lighter than bg-1, do not usually use)
+  "bg-1": #2e3440,          // Lighter (UI prominent->put shadow, darker than bg-1)
+  "ui-0": #eceff4,          // Darker (titles)
+  "ui-1": #b4b9c2,          // Lighter (normal text)
+  "ui-2": #abb9cf,          // Light bluish (lighter text)
+  "shadow-strong": rgba(15, 17, 21, 0.35),
+  "shadow-weak": rgba(15, 17, 21, 0.15),
+);
+
+:root {
+    @each $name, $code in $colors {
+        --#{$name}: #{$code};
+    }
+
+    @each $name, $code in $colors_light {
+        --#{$name}: #{$code};
+    }
+}
+
+[data-theme="dark"] {
+    @each $name, $code in $colors_dark {
+        --#{$name}: #{$code};
+    }
+}
+
+@each $name, $code in map-merge($colors, map-merge($colors_dark, $colors_light)) {
+    .fill--#{$name} {
+        fill: var(--#{$name});
+    }
+}
+
+@mixin shadow-strong {
+    box-shadow: 0 6px 10px var(--shadow-strong),
+        0 0 6px var(--shadow-strong);
+
+    &:hover {
+        box-shadow: 0 6px 15px var(--shadow-strong),
+            0 4px 8px var(--shadow-strong);
+    }
+}
+
+@mixin shadow-weak {
+    box-shadow: 0 6px 10px var(--shadow-weak),
+        0 0 6px var(--shadow-weak);
+}

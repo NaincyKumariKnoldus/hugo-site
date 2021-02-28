@@ -1,7 +1,6 @@
-$media-big: 50rem;
-$media-mid: $media-big/2; // Font resize
-$media-small: 400px; // Padding removed
-
+$media-big: 1024px;  // Desktops, large screens
+$media-mid: 768px;   // Small screens, laptops
+$media-small: 480px; // Mobile devices
 
 @import "normalize";
 @import "colors";

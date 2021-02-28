@@ -91,15 +91,16 @@ function themeSwitch() {
 
 
 function navToogle() {
-    let nav = document.getElementById("nav");
-
-    if (nav.style.opacity != "1") {
-        document.body.classList.add("stop-scrolling"); 
+    let nav = document.getElementById("nav-expanded");
+    if (nav.style.visibility != "visible") {
+      document.body.classList.add("stop-scrolling"); 
+      nav.style.visibility = "visible";
       nav.style.opacity = "1";
     }
     else {
       document.body.classList.remove("stop-scrolling"); 
-      nav.style.opacity = "0";  
+      nav.style.visibility = "hidden";  
+      nav.style.opacity = "0";
     }
   }
 

@@ -2,15 +2,21 @@
     <div class="page-centered">
         <a id="header__logo" href="/">{{ partial "svg/druskus.svg" . }}</a>
         <div class="flex-spacer"></div>
-        <button id="nav-toogle"  onclick="navToogle()">Wrapper</button>
         <nav id="nav">
-            <ul>
+            <button id="nav-toogle" onclick="navToogle()">Nav-toogle</button>
+            <ul id="nav__links">
                 <li><a href="/posts">Posts</a></li>
                 <li><a href="/projects">Projects</a></li>
                 <li><a href="/contact-me">Contact Me</a></li>
             </ul>
+            <button id="theme-switch" onclick="themeSwitch()">ThemeS</button>
         </nav>
-        <button id="theme-switch" onclick="themeSwitch()">ThemeS</button>
-        </div>
-
+    </div>
+    <nav id="nav-expanded">
+        <ul id="nav-expanded__links">
+            <li><a href="/posts">Posts</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/contact-me">Contact Me</a></li>
+        </ul>
+    </nav>
 </header>

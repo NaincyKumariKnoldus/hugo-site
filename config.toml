@@ -10,8 +10,8 @@ pygmentsCodefences = true
 
 [permalinks]
   posts    = "posts/:year/:month/:title/"
-#  projects = "projects/:year/:month/:title/"
-   projects = "projects"
+  projects = "projects/:title/"
+  # projects = "projects"
 
 [params]
   author = "Pedro Burgos"

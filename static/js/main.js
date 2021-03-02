@@ -68,14 +68,6 @@ $(window).scroll(
 }));
 
 
-
-
-
-
-
-
-
-
 function themeSwitch() {
   let theme = document.documentElement.getAttribute('data-theme');
   if (theme == null || theme == 'light') {
@@ -87,7 +79,6 @@ function themeSwitch() {
     localStorage.setItem('theme', 'light'); //add this
   }
 }
-
 
 
 function navToogle() {
@@ -103,8 +94,5 @@ function navToogle() {
       nav.style.opacity = "0";
     }
   }
-
-  
-
 
   

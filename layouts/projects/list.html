@@ -4,13 +4,14 @@
 {{ define "main" }}
 <main>
     <div class="page-centered">
-  <h1>List</h1>
+  <h1>{{ .Title }}</h1>
+  <section class="pagelist">
   {{ range .Pages }}
-    <article>
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-      
-    </article>
+      <a class="project-card" href="{{ .Permalink }}">
+        <span>{{ .Title }}</span>
+      </a>
   {{ end }}
+</section>
 </div>
 </main>
 {{ end }}

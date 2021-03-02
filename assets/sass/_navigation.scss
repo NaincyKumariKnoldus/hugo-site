@@ -17,7 +17,6 @@ nav {
     }
 
     &#nav-expanded {
-
         // I need both opacity and visibility in order to be able to click-through
         //  (transition only works on opacity)
         //  I also need display "none" in case I resize the window
@@ -45,7 +44,6 @@ nav {
             display: block;
         }
     }
-
 }
 
 @media (max-width: $media-small) {

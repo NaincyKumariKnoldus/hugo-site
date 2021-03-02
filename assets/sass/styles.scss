@@ -7,13 +7,13 @@ $media-small: 480px; // Mobile devices
 @import "layout";
 @import "landingpage";
 @import "pagelist";
+@import "project-card";
 @import "article";
 @import "typography";
 @import "scrollbar";
 @import "navigation";
 @import "buttons";
 @import "code";
-
 
 
 @import "__debug.scss";

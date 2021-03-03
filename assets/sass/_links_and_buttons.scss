@@ -15,12 +15,15 @@ button {
     }
 }
 
-
 button, a {
     &.underlined-button {
         border: 0 solid;
-        border-bottom: 2px solid var(--ui-1);
+        border-bottom: 2px solid transparent;
         text-decoration: none;
+
+        &:hover {
+            border-bottom: 2px solid var(--ui-1);
+        }
     }
 }
 

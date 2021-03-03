@@ -1,6 +1,9 @@
 {{ define "title" }}
 {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
+{{ define "header" }}
+{{ partial "header" (dict "context" . "pagename" "posts") }}
+{{ end }}
 {{ define "main" }}
 <main>
   <article class="page-centered">

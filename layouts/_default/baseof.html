@@ -30,7 +30,8 @@
     {{ end }}
 </head>
 <body>
-    {{ partial "header.html" . }}
+    {{ block "header" . }}
+    {{ end }}
     {{ block "main" . }}
     {{ end }}
     {{ partial "footer.html" . }}

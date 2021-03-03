@@ -4,15 +4,15 @@
         <div class="flex-spacer"></div>
         <ul id="nav">
                 <li class="media-show"><button id="nav-toogle" class="underlined-button" onclick="navToogle()">Nav-toogle</button></li> 
-                <li class="media-hide"><a href="/posts" class="underlined-button">Posts</a></li>
-                <li class="media-hide"><a href="/projects" class="underlined-button">Projects</a></li>
-                <li class="media-hide"><a href="/contact-me" class="underlined-button">Contact Me</a></li>
+                <li class="media-hide"><a href="/posts" class="underlined-button{{ if eq .pagename "posts" }}--selected{{ end }}">Posts</a></li>
+                <li class="media-hide"><a href="/projects" class="underlined-button{{ if eq .pagename "projects" }}--selected{{ end }}">Projects</a></li>
+                <li class="media-hide"><a href="/contact-me" class="underlined-button{{ if eq .pagename "contact-me" }}--selected{{ end }}">Contact Me</a></li>
                 <li><button id="theme-switch" class="underlined-button" onclick="themeSwitch()">ThemeS</button></li>
         </ul>
     </div>
     <ul id="nav-expanded">
-            <li><a href="/posts" class="underlined-button">Posts</a></li>
-            <li><a href="/projects" class="underlined-button">Projects</a></li>
-            <li><a href="/contact-me" class="underlined-button">Contact Me</a></li>
+            <li><a href="/posts" class="underlined-button{{ if eq .pagename "posts" }}--selected{{ end }}">Posts</a></li>
+            <li><a href="/projects" class="underlined-button{{ if eq .pagename "projects" }}--selected{{ end }}">Projects</a></li>
+            <li><a href="/contact-me" class="underlined-button{{ if eq .pagename "contact-me" }}--selected{{ end }}">Contact Me</a></li>
     </ul>
 </header>

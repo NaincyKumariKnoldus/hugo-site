@@ -1,17 +1,16 @@
-nav {
-    > ul {
-        padding: 0;
-        margin: 0;
-    }
+ul {
+    padding: 0;
+    margin: 0;
 
     &#nav {
         display: flex;
 
-        li {
+        > li {
             display: inline-block;
+            margin: 0 0.125em;
         }
 
-        > #nav-toogle {
+        > .media-show {
             display: none;
         }
     }
@@ -39,7 +38,7 @@ nav {
         background: var(--bg-0);
 
  
-        li {
+        > li {
             text-align: center;
             display: block;
         }
@@ -47,13 +46,13 @@ nav {
 }
 
 @media (max-width: $media-small) {
-    nav {
+    ul {
         &#nav {
-            > #nav__links {
+            > .media-hide {
                 display: none;
             }
 
-            > #nav-toogle {
+            > .media-show {
                 display: initial;
             }
         }

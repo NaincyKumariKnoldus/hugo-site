@@ -1,8 +1,12 @@
 {{ define "title" }}
   {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
-{{ define "main" }}
+
+
+{{ define "header" }}
 {{ partial "header" (dict "context" . "pagename" "projects") }}
+{{ end }}
+{{ define "main" }}
 <main>
 
     <div class="page-centered">

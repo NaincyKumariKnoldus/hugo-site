@@ -7,11 +7,17 @@ ul {
 
         > li {
             display: inline-block;
-            margin: 0 0.125em;
+            margin: 0 0.5em;
         }
 
         > .media-show {
             display: none;
+        }
+
+        li > button > svg {
+            * {
+                fill: var(--ui-1)
+            }
         }
     }
 

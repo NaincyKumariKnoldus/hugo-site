@@ -1,41 +1,59 @@
+#hero {
+    text-align: center;
+    min-height: 65vh;
+}
+
 main {
-    #hero {
-
-    }
-
     .whoami {
-        width: 80%;
+        width: 78%;
     
         display: grid;
         align-items: center;
         justify-content: center;
-        gap: 1em 2em;
+        gap: 0.5em 2em;
         margin: 2em auto;
         justify-items: center;
         align-items: center;
 
+
         &#whoami1 {
-            grid-template-columns: 1fr 0.50fr;
+            grid-template-columns: 1.5fr 1fr;
             grid-template-areas:
                 "info1 image"
-                "info2 image"
+                "info2 image";
+            
+            @media only screen and (max-width: $media-mid)
+            {
+                grid-template-columns: 1fr;
+                grid-template-areas: "image" 
+                                     "info1"
+                                     "info2";
+            }
         }
      
         &#whoami2 {
-            grid-template-columns: 0.50fr 1fr;
+            grid-template-columns: 1fr 1.5fr;
             grid-template-areas:
                 "image info1"
                 "image info2";
+
+            @media only screen and (max-width: $media-mid)
+            {
+                grid-template-columns: 1fr;
+                grid-template-areas: "image" 
+                                     "info1"
+                                     "info2";
+            }
         }
         
         .whoami__info {
             display: flex;
 
             > svg {
-                min-width: 1.8em;
-                min-height: 1.8em;
-                width: 1.8em;
-                height: 1.8em;
+                min-width: 2.2em;
+                min-height: 2.2em;
+                width: 2.2em;
+                height: 2.2em;
                 margin-right: 1em;
                 fill: var(--ui-1);
             }
@@ -50,10 +68,17 @@ main {
 
         > svg {
             width: 100%;
-             
+            height: 80%;
+            max-width: 24rem;
+            margin-bottom: 2em;
+            
             &#whoami2__image, &#whoami1__image {
                 grid-area: image;
             }
         }
+
+
+
+
     }
 }

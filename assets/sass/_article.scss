@@ -1,6 +1,89 @@
 main > article {
     @include shadow-weak();
-    padding: 3rem 5rem;
+    padding: 5rem 7rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
+
+    > .titles {
+        text-align: center;
+        margin-bottom: 5em;
+
+        > &__title {
+            font-weight: 600;
+        }
+    }
+
+    > .highlight {
+        width: 90%;
+        margin: 2em auto;
+    }
+
+
+    @media only screen and (max-width: $media-mid) {
+        padding: 3rem 3rem;
+        > .titles {
+            margin-bottom: 3rem;
+        }
+    }
+
+    @media only screen and (max-width: $media-small) {
+        padding: 3rem 1.5rem;
+
+        > .highlight  {
+            width: 100%;
+        }
+    }
+    
+
+    > blockquote {
+        margin: 2em auto;
+        width: 90%;
+        border-left: 5px solid var(--ui-1);
+        border-radius: 5px;
+
+        > p {
+            margin: 0;
+            margin-left: 1.5em;
+        }
+    }
+
+    > table {
+
+        margin: 2em auto;
+        table-layout: fixed;
+        border-collapse: collapse;
+   
+        td, th {
+            border: 1px solid var(--ui-1);
+            padding: 10px;
+        }
+    }
+
+    p > code {
+        background: var(--bg-0);
+        border-radius: 3px;
+        padding: 2px 7px;
+    }
+
+    > ul {
+        margin: 2em auto;
+        width: 90%;
+        li {
+            list-style: none;
+            margin-left:1em;
+            margin-bottom: 7px;
+        }
+    }
+
+
+    > img, > p > img {
+        margin: 0 auto 2em auto;
+        display: block;
+        // other style
+    }
+    
+    > img {
+    
+    }
+
 }

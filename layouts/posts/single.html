@@ -7,7 +7,19 @@
 {{ define "main" }}
 <main>
   <article class="page-centered">
-    <h1>{{ .Title }}</h1>
+
+    <div class="titles">
+      <div class="titles__title">
+        <h2>{{ .Title }}</h2>
+      </div>
+      <div class="titles__subtitle">
+        {{ if isset .Params "desc" }}
+        <h5>{{ .Params.desc }}</h5>
+        {{ end }}
+      </div>
+    </div>
+
+
     {{ .Content }}
   </article>
 </main>

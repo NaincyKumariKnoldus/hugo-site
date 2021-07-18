@@ -15,13 +15,16 @@ similique
 sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum 
 
 
+> Hello hi
+
+
 
 ```html
   <!doctype html>
   <html lang="en">
     <head>
       <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="viewport">
       <title>Hello, world!</title>
     </head>
     <body>
@@ -30,16 +33,30 @@ sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fug
   </html>
 ```
 
+```lisp
+(hi :bar 22 
+    :baz {(foo == bar ? fuck" : 12)} 
+  (foo) $
+  (baz))
+```
 
 
+![Example image](images/elkeyboard.png)
+{{< imgresize "images/elkeyboard.png" "250" "250" >}}
 
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
 
 
 quidem
 rerum
 facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque
 nihil
-impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
+impedit quo minus id quod `maxime` placeat facere possimus, omnis voluptas assumenda est, omnis dolor
 repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe
 eveniet
 ut et

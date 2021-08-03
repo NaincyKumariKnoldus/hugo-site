@@ -8,10 +8,19 @@
 <main>
     <div class="page-centered">
   <h1>{{ .Title }}</h1>
-  <section class="pagelist">
+  <section class="projectlist">
   {{ range .Pages }}
       <a class="project-card" href="{{ .Permalink }}">
-        <span>{{ .Title }}</span>
+        <div class="info">
+          <div class="info__title">
+            {{ .Title }}
+          </div>
+          {{ if isset .Params "desc" }}
+          <div class="info__desc">
+            {{ .Params.desc }}
+          </div>
+          {{ end }}
+        </div>
       </a>
   {{ end }}
 </section>

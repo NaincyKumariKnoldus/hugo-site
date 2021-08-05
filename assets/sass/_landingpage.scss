@@ -1,6 +1,24 @@
 #hero {
-    text-align: center;
-    min-height: 65vh;
+
+    margin-top: -4rem; // Bellow the header
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 35rem; 
+    max-height: 65vh;
+    background-image: url(https://images.unsplash.com/photo-1487621167305-5d248087c724?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9nZ3klMjBmb3Jlc3R8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80);
+    background-attachment: scroll;
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+
+    margin-bottom: 5rem;
+    overflow-y: hidden;
+
+    h1 {
+        color: #ECEFF4;
+    }
 }
 
 main {

@@ -27,13 +27,23 @@ p {
     margin-bottom: 2em;
 }
 
-p, a, b, span, button {
-    font-family: "Inter", ns-serif;
-    font-size: 1rem;
+p, a, b, span, button, ul, li, td, th {
+    font-family: "Inter", sans-serif;
+    font-size: 1.25rem;
+
+    @media (max-width: $media-small) {
+        font-size: 1rem;
+    }
 }
 
 code {
     font-family: "monospace";
+}
+
+code, code *, table, table *, ul, ul * {
+    @media (max-width: $media-mid) {
+        font-size: 1rem;
+    }
 }
 
 p:not(:first-child) {
@@ -63,3 +73,4 @@ h5 {
 h6 {
     font-size: 1.25rem;
 }
+

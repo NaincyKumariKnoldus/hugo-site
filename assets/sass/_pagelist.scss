@@ -1,37 +1,74 @@
 .pagelist {
-    display: flex;
-    flex-direction: column;
+    .intro {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-    > .pagelist__item {
-        padding: 1rem 1rem 1rem 3.5rem;
+    .pages {
         display: flex;
-        flex-direction: row;
-        position: relative;
+        flex-direction: column;
+        width: fit-content;
+        margin: auto;
 
-        > .pagelist__item__date {
-            display: inline-block;
-            min-width: 7em;
-            width: 20%;
-            margin-right: 1em;
-        }
+        > .pages__item {
+            padding: 1.5rem 1rem 1.5rem 3.5rem;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            position: relative;
 
-        &::before, &::after {
-            left: 1rem; 
-            top: 0;
-            position: absolute;
-            height: 50%;
-            width: 1.5rem;
-            content: "";
-        }
+            &:hover {
+                text-decoration: underline;
+            }
 
-        &::before { 
-            border-left: 1px solid var(--ui-1);
-            border-bottom: 1px solid var(--ui-1);
-        }
+            > .pages__item__date, > .pages__item__title {
+                text-decoration: none;
+            }
 
-        &:not(:last-child)::after {
-            top: 50%;
-            border-left: 1px solid var(--ui-1);
+            > .pages__item__date {
+                flex-shrink: 0;
+                display: inline-block;
+                min-width: 7em;
+                white-space: nowrap;
+                width: 10rem;
+                margin: 0 1.5em 0 2.2em;
+                font-size: 1rem;
+            }
+
+            > .pages__item__title {
+                font-weight: bold;
+                font-size: 1.3em;
+            }
+
+            &::before, &::after {
+                left: 1rem; 
+                top: 0;
+                position: absolute;
+                height: 50%;
+                width: 1.5rem;
+                content: "";
+            }
+
+            &::before { 
+                border-left: 1px solid var(--ui-1);
+                border-bottom: 1px solid var(--ui-1);
+            }
+
+            &:not(:last-child)::after {
+                top: 50%;
+                border-left: 1px solid var(--ui-1);
+            }
+
+            @media (max-width: $media-mid) {
+                flex-direction: column;
+                align-items: start;
+
+                > .pages__item__date {
+                    margin: 0;
+                }
+            }
+
         }
     }
 }

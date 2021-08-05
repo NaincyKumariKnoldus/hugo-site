@@ -1,55 +1,72 @@
 .projectlist {
-	display: flex;
-    flex-direction: column;
-    align-items: center;
+	 .intro {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+		}
+
+	.projects {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.project-card {
+			margin-bottom: 1.5em;
+			position: relative;
+			height: 13em;
+			width: 40rem;
+			max-width: 90%;  
+			border-radius: 4px;
+
+			overflow: hidden;
+			background-color: var(--bg-1);
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				min-height: 100%;
+				min-width: 100%;
+
+				background-image: url("https://images.photowall.com/products/58341/foggy-forest-4.jpg?h=699&q=85");
+				background-size: auto 200%;
+				background-position-x: center;
+				background-position-y: center;
+
+			}
+
+			> .info {
+				z-index: 1;
+				position: absolute;
+				bottom: 0;
+				// TODO
+				background: #000000;
+				color: #F0F0F0;
+				width: 100%;
+				min-height: 3rem;
+				opacity: 60%;
+				font-size: 1.1rem;
+				padding: 7px;
+			}
 
 
-    .project-card {
-        margin-bottom: 1.5em;
-        position: relative;
-        height: 13em;
-        width: 40rem;
-        max-width: 90%;  
+			@media (hover: hover) {
+				&::before {
+					filter: blur(1px);
+					opacity: 80%;
+					transform: scale(1.1);  // For sharper borders
+					transition: all 0.2s ease, background-position 0ms;
+				}
 
-        overflow: hidden;
-        background-color: var(--bg-1);
-
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            min-height: 100%;
-            min-width: 100%;
-
-            background-image: url("https://images.photowall.com/products/58341/foggy-forest-4.jpg?h=699&q=85");
-            background-size: auto 200%;
-            background-position-x: center;
-            background-position-y: center;
-
-            filter: blur(2px);
-            opacity: 80%;
-            transform: scale(1.1);  // For sharper borders
-            transition: all 0.2s ease, background-position 0ms;
-        }
-
-        > .info {
-            z-index: 1;
-            position: absolute;
-            bottom: 0;
-            background: black;
-            width: 100%;
-            min-height: 3rem;
-            opacity: 60%;
-        }
-
-        &:hover {
-            &::before {	
-            background-size: auto 205%;
-            opacity: 1.0;
-            filter: blur(0px);
-            }
-        }
-    }       
+				&:hover {
+					&::before {	
+						background-size: auto 205%;
+						opacity: 1.0;
+						filter: blur(0px);
+					}
+				}
+			}
+		}       
+	}
 }
-        

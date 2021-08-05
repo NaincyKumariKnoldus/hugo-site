@@ -18,6 +18,15 @@ body {
         position: sticky;
         top: 0;
         transition: top 0.3s; // Transition on scroll
+
+
+        /* 
+        TODO
+        background: transparent;
+        a {
+            color: #ECEFF4;
+        }
+        */
         
         > .page-centered {
             padding: 0 3rem;
@@ -55,6 +64,11 @@ body {
 
     .header-shadow {
         @include shadow-weak();
+    }
+
+    .page-title {
+        padding: 2rem;
+        text-align: center;
     }
 }
 

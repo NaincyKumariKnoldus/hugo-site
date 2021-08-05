@@ -1,5 +1,5 @@
 ---
-title: "Post3"
+title: "Why haskell is a good language"
 desc: "Sample description"
 date: 2020-10-27T22:37:13+01:00
 author: "noAuthor"

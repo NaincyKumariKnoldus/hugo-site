@@ -1,5 +1,5 @@
 ---
-title: "Haskell or not"
+title: "Haskell, or why elko might be retarded"
 desc: "Either it is or it's not"
 date: 2020-10-26T23:43:25+01:00
 author: "noAuthor"

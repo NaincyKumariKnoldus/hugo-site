@@ -5,11 +5,13 @@
 {{ partial "header" (dict "context" . "pagename" "projects") }}
 {{ end }}
 {{ define "main" }}
-<main>
-    <div class="page-centered">
-  <h1>{{ .Title }}</h1>
-  <section class="projectlist">
-  {{ range .Pages }}
+<main class="projectlist">
+    <section class="page-title page-centered"> 
+      <h1>{{ .Title }}</h1>
+    </section> 
+    <section class="projects page-centered">
+      <p class="intro">ttis my project stuff aka im stupid hello hi its me. elko is dumb. is my project stuff aka im stupid hello hi its me. elko is dumb.</p> 
+      {{ range .Pages }}
       <a class="project-card" href="{{ .Permalink }}">
         <div class="info">
           <div class="info__title">
@@ -22,8 +24,7 @@
           {{ end }}
         </div>
       </a>
-  {{ end }}
-</section>
-</div>
+      {{ end }}
+    </section>
 </main>
 {{ end }}

@@ -19,18 +19,19 @@
       overflow: hidden;
       >.front,
       >.back {
-        display: block;
         color: white;
         width: inherit;
         background-size: cover!important;
         background-position: center!important;
+        background: var(--bg-1);
+        background-image: url(https://images.unsplash.com/photo-1487621167305-5d248087c724?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9nZ3klMjBmb3Jlc3R8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80);
         height: 220px;
         padding: 1em 2em;
-        background: var(--bg-1);
         border-radius: 10px;
-        font-size: 0.9125rem;
-        line-height: 160%;
         color: var(--ui-1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
 
@@ -40,7 +41,6 @@
       position: relative;
       >.front.reversible,
       >.back {
-        display: block;
         transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);
         transition-duration: .5s;
         transition-property: transform, opacity;
@@ -60,12 +60,14 @@
       &:hover {
         >.front.reversible {
           transform: rotateY(180deg);
+          opacity: 0;
         }
         >.back {
           opacity: 1;
           transform: rotateY(0deg);
         }
       }
+
     }
   }
 }

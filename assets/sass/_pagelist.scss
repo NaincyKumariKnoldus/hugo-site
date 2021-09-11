@@ -1,8 +1,7 @@
 .pagelist {
     .intro {
-        width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
+        width: 100%;
+        text-align: center;
     }
 
     .pages {
@@ -12,7 +11,7 @@
         margin: auto;
 
         > .pages__item {
-            padding: 1.5rem 1rem 1.5rem 3.5rem;
+            padding: 1rem 1rem 1rem 3.5rem;
             display: flex;
             align-items: center;
             flex-direction: row;
@@ -33,12 +32,12 @@
                 white-space: nowrap;
                 width: 10rem;
                 margin: 0 1.5em 0 2.2em;
-                font-size: 1rem;
+                font-size: 0.85rem;
             }
 
             > .pages__item__title {
                 font-weight: bold;
-                font-size: 1.3em;
+                font-size: 1em;
             }
 
             &::before, &::after {

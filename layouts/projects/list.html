@@ -13,16 +13,18 @@
       <p class="intro">ttis my project stuff aka im stupid hello hi its me. elko is dumb. is my project stuff aka im stupid hello hi its me. elko is dumb.</p> 
       {{ range .Pages }}
       <a class="project-card" href="{{ .Permalink }}">
-        <div class="info">
-          <div class="info__title">
+        {{ if isset .Params "desc" }}
+        <div class="front reversible">
+        {{ else }}
+        <div class="front">
+        {{ end }}
             {{ .Title }}
-          </div>
-          {{ if isset .Params "desc" }}
-          <div class="info__desc">
-            {{ .Params.desc }}
-          </div>
-          {{ end }}
         </div>
+        {{ if isset .Params "desc" }}
+        <div class="back">
+          {{ .Params.desc }}
+        </div>
+        {{ end }}
       </a>
       {{ end }}
     </section>

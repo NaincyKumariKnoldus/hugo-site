@@ -1,6 +1,5 @@
 main > article {
     @include shadow-weak();
-    padding: 5rem 7rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
 
@@ -20,15 +19,12 @@ main > article {
 
 
     @media only screen and (max-width: $media-mid) {
-        padding: 3rem 3rem;
         > .titles {
             margin-bottom: 3rem;
         }
     }
 
     @media only screen and (max-width: $media-small) {
-        padding: 3rem 1.5rem;
-
         > .highlight  {
             width: 100%;
         }

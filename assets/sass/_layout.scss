@@ -75,3 +75,27 @@ body {
 .stop-scrolling {
     overflow: hidden;
 }
+
+
+
+// This is a bit of a mess, but its to ensure proper padding in 
+//  different screens
+body > main {
+    > article, &.pagelist, &.projectlist {
+   padding: 3rem 1.5rem;
+    @media only screen and (max-width: $media-mid) {
+        padding: 3rem 3rem;
+        > .titles {
+            margin-bottom: 3rem;
+        }
+    }
+
+    @media only screen and (max-width: $media-small) {
+        padding: 3rem 1.5rem;
+
+        > .highlight  {
+            width: 100%;
+        }
+  }
+}
+}

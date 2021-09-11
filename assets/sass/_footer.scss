@@ -7,8 +7,15 @@ footer {
             height: 1.75em;
             width: 1.75em;
             > svg {
-                height: 1.75em;
-                width: 1.75em;
+                opacity: 75%;
+                path { fill: var(--ui-1);} 
+                height: 1em;
+                width: 1em;
+
+                &:hover {
+                    opacity: 100%;
+    
+                }
             }
         }
 

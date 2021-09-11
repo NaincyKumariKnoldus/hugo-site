@@ -8,9 +8,9 @@
 <main class="projectlist">
     <section class="page-title page-centered"> 
       <h1>{{ .Title }}</h1>
+      <p class="intro">ttis my project stuff aka im stupid hello hi its me. elko is dumb uwu. is my project stuff aka im stupid hello hi its me. elko is dumb.</p> 
     </section> 
     <section class="projects page-centered">
-      <p class="intro">ttis my project stuff aka im stupid hello hi its me. elko is dumb. is my project stuff aka im stupid hello hi its me. elko is dumb.</p> 
       {{ range .Pages }}
       <a class="project-card" href="{{ .Permalink }}">
         {{ if isset .Params "desc" }}

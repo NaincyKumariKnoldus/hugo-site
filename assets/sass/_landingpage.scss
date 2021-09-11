@@ -5,6 +5,10 @@
     align-items: center;
     justify-content: center;
 
+    // fix padding issue due to scrollbar padding counteact
+    //  margin-right: calc(-1 * (100vw - 100%) + 1rem);
+
+    width: 101vw;
     height: 35rem; 
     max-height: 65vh;
     background-image: url(https://images.unsplash.com/photo-1487621167305-5d248087c724?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9nZ3klMjBmb3Jlc3R8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80);

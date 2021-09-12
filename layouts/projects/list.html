@@ -12,7 +12,7 @@
     </section> 
     <section class="projects page-centered">
       {{ range .Pages }}
-      <a class="project-card" href="{{ .Permalink }}">
+      <a class="project-card" href="{{ .Params.externallink }}">
         {{ if isset .Params "desc" }}
         <div class="front reversible">
         {{ else }}

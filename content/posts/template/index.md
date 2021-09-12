@@ -1,11 +1,11 @@
 ---
-title: "Uwu hardmode is actually hard. Uwu oof."
+title: "Template"
 desc: "Sample description"
 date: 2020-10-27T23:43:24+01:00
 author: "noAuthor"
 categories: ["Programming"]
 draft: true
-private: false
+private: true
 ---
 AAAQQQ
 At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis

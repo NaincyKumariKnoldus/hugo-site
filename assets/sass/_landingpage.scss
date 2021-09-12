@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 
     // fix padding issue due to scrollbar padding counteact
     //  margin-right: calc(-1 * (100vw - 100%) + 1rem);
@@ -19,7 +20,7 @@
     margin-bottom: 5rem;
     overflow-y: hidden;
 
-    h1 {
+    h1, h3 {
         color: #ECEFF4;
     }
 }

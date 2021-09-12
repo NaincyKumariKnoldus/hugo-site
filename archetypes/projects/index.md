@@ -2,7 +2,7 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 externallink: "" 
-img: "images/front.png"
+img: ""
 description: "This is a project"
 private: true
 ---

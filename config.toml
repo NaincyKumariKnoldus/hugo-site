@@ -9,8 +9,9 @@ pygmentsUseClasses = true
 pygmentsCodefences = true
 
 [permalinks]
-  posts    = "posts/:year/:month/:title/"
-  projects = "projects/:title/"
+  posts      = "posts/:year/:month/:title/"
+  projects   = "projects/:title/"
+  contact-me = ":filename/"
   # projects = "projects"
 
 [params]

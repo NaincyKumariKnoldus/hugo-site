@@ -1,0 +1,24 @@
+{{ define "title" }}
+{{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+{{ define "header" }}
+{{ partial "header" (dict "context" . "pagename" "contact-me") }}
+{{ end }}
+{{ define "main" }}
+<main class="contact-me">
+    <section class="page-title page-centered"> 
+      <h1>{{ .Title }}</h1>
+      <p class="intro">just do it lol.</p> 
+    </section> 
+    <section class="contact page-centered">
+        <form>
+            <input class="form__name" type="email" placeholder="Name"><br>
+            <input class="form__company" type="email" placeholder="Company"><br>
+            <input class="form__title" type="email" placeholder="Subject"><br>
+            <textarea rows="8" cols="50" placeholder="Write your message here"></textarea>
+            <input class="form__button" type="button" value="Send"><br>
+        </form>
+
+    </section>
+</main>
+{{ end }}

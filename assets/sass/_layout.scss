@@ -13,7 +13,7 @@ body {
         padding: 0 1rem;
 
         // hotflix for padding due to scrollbar overlay
-        padding-right: 2rem;
+        // padding-right: 2rem; // breaks in mobile
 
         @media only screen and (max-width: $media-small) {
             padding: 0;

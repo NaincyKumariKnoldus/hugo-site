@@ -1,0 +1,43 @@
+.contact-me {
+  > .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    > form {
+      background: var(--bg-1);
+      padding: 2em;
+      box-shadow: 0 6px 10px var(--shadow-weak),0 0 6px var(--shadow-weak);
+
+      > *  {
+        width: 100%;
+        margin-bottom: 1em;
+      }
+      
+      > textarea {
+        resize: none
+      }
+
+      > input, > textarea {
+        font-family: inter,sans-serif;
+        font-size: 1rem;
+        background-color: var(--ui-1);
+        color: var(--bg-1);
+        border: 0;
+        padding: 0.5em;
+
+        &:hover,
+        &:focus,
+        &:active {
+          outline: 0;
+        }
+
+        &::placeholder {
+          color: var(--bg-1);
+          opacity: 0.75;
+        }
+      }
+    }
+  }
+}

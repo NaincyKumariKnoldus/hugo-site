@@ -12,6 +12,8 @@
     align-items: center;
 
     .project-card {
+      
+
       display: inline-block;
       margin: 1em 1em 1em 1em;
       width: 100%;
@@ -19,6 +21,9 @@
       overflow: hidden;
       >.front,
       >.back {
+        // TODO: Fix
+        box-shadow: 0 6px 10px var(--shadow-weak),0 0 6px var(--shadow-weak);
+
         color: white;
         width: inherit;
         background-size: cover!important;

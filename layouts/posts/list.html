@@ -5,20 +5,18 @@
 {{ partial "header" (dict "context" . "pagename" "posts") }}
 {{ end }}
 {{ define "main" }}
-<main class="pagelist">
-  <section class="page-title page-centered">
+<main class="pagelist page-centered">
+  <section class="page-title">
     <h1>{{ .Title }}</h1>
-    <p class="intro">I write stuff (sometimes?)</p>
+    <p class="subtitle">I write stuff (sometimes?)</p>
   </section>
-  <section class="page-centered">
-    <div class="pages">
+  <section class="pages">
     {{ range .Pages }}
     <div class="pages__item">
       <a class="pages__item__date" href="{{ .Permalink }}">{{ .Date.Format "January 2, 2006" }}</a>
       <a class="pages__item__title" href="{{ .Permalink }}">{{ .Title }}</a>
     </div>   
     {{ end }}
-    </div>
   </section>
 </main>
 {{ end }} 

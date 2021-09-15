@@ -6,9 +6,10 @@
     align-items: center;
 
     > form {
+      @include shadow-weak();
+
       background: var(--bg-1);
       padding: 2em;
-      box-shadow: 0 6px 10px var(--shadow-weak),0 0 6px var(--shadow-weak);
 
       > *  {
         width: 100%;

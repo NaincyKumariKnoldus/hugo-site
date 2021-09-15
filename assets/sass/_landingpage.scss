@@ -1,106 +1,128 @@
 #hero {
+  margin-top: -4rem; // Bellow the header
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
-    margin-top: -4rem; // Bellow the header
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  // fix padding issue due to scrollbar padding counteact
+  //  margin-right: calc(-1 * (100vw - 100%) + 1rem);
 
-    // fix padding issue due to scrollbar padding counteact
-    //  margin-right: calc(-1 * (100vw - 100%) + 1rem);
+  height: 35rem; 
+  max-height: 65vh;
+  background-image: url(https://images.unsplash.com/photo-1487621167305-5d248087c724?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9nZ3klMjBmb3Jlc3R8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80);
+  background-attachment: scroll;
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
 
-    height: 35rem; 
-    max-height: 65vh;
-    background-image: url(https://images.unsplash.com/photo-1487621167305-5d248087c724?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9nZ3klMjBmb3Jlc3R8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80);
-    background-attachment: scroll;
-    background-size: cover;
-    background-repeat: repeat;
-    background-position: center;
+  margin-bottom: 5rem;
+  overflow-y: hidden;
 
-    margin-bottom: 5rem;
-    overflow-y: hidden;
-
-    h1, h3 {
-        color: #ECEFF4;
-    }
+  h1, h3 {
+    color: #ECEFF4;
+  }
 }
 
-main {
-    .whoami {
-        width: 78%;
-    
-        display: grid;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5em 2em;
-        margin: 2em auto;
-        justify-items: center;
-        align-items: center;
+.landingpage {
+  .whoami {
+    margin-bottom: 10em;
 
+    & > #whoami1, 
+    & > #whoami2 {
+      width: 78%;
 
-        &#whoami1 {
-            grid-template-columns: 1.5fr 1fr;
-            grid-template-areas:
-                "info1 image"
-                "info2 image";
-            
-            @media only screen and (max-width: $media-mid)
-            {
-                grid-template-columns: 1fr;
-                grid-template-areas: "image" 
-                                     "info1"
-                                     "info2";
-            }
-        }
-     
-        &#whoami2 {
-            grid-template-columns: 1fr 1.5fr;
-            grid-template-areas:
-                "image info1"
-                "image info2";
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5em 2em;
+      margin: 3em auto;
+      justify-items: center;
+      align-items: center;
 
-            @media only screen and (max-width: $media-mid)
-            {
-                grid-template-columns: 1fr;
-                grid-template-areas: "image" 
-                                     "info1"
-                                     "info2";
-            }
-        }
-        
-        .whoami__info {
-            display: flex;
-
-            > svg {
-                min-width: 2.2em;
-                min-height: 2.2em;
-                width: 2.2em;
-                height: 2.2em;
-                margin-right: 1em;
-                fill: var(--ui-1);
-            }
-
-            &#whoami1__info1, &#whoami2__info1 {
-                grid-area: info1;
-            }
-            &#whoami1__info2, &#whoami2__info2 {
-                grid-area: info2;
-            }
-        }
+      .whoami__info {
+        display: flex;
 
         > svg {
-            width: 100%;
-            height: 80%;
-            max-width: 24rem;
-            margin-bottom: 2em;
-            
-            &#whoami2__image, &#whoami1__image {
-                grid-area: image;
-            }
+          min-width: 2.2em;
+          min-height: 2.2em;
+          width: 2.2em;
+          height: 2.2em;
+          margin-right: 1em;
+          fill: var(--ui-1);
         }
 
+        &#whoami1__info1, &#whoami2__info1 {
+          grid-area: info1;
+        }
+        &#whoami1__info2, &#whoami2__info2 {
+          grid-area: info2;
+        }
+      }
 
+      svg {
+        width: 100%;
+        height: 80%;
+        max-width: 20rem;
+        margin-bottom: 2em;
 
-
+        &#whoami2__image, &#whoami1__image {
+          grid-area: image;
+        }
+      }
     }
+
+
+    & > #whoami1 {
+      grid-template-columns: 1.5fr 1fr;
+      grid-template-areas:
+      "info1 image"
+      "info2 image";
+
+      @media only screen and (max-width: $media-mid)
+      {
+        grid-template-columns: 1fr;
+        grid-template-areas: "image" 
+        "info1"
+        "info2";
+      }
+    }
+
+    & > #whoami2 {
+      grid-template-columns: 1fr 1.5fr;
+      grid-template-areas:
+      "image info1"
+      "image info2";
+
+      @media only screen and (max-width: $media-mid)
+      {
+        grid-template-columns: 1fr;
+        grid-template-areas: "image" 
+        "info1"
+        "info2";
+      }
+    }
+  }
+
+  > .interests {
+    max-width: 30rem;
+    width: 78%;
+    margin: auto;
+
+    .interest {
+        display: flex;
+  
+        > svg {
+          min-width: 1.5em;
+          min-height: 1.5em;
+          width: 1.5em;
+          height: 1.5em;
+
+          margin-right: 1em;
+          fill: var(--ui-1);
+        }
+    }
+  }
 }
+
+

@@ -1,13 +1,9 @@
 .pagelist {
-    .intro {
-        margin: 1em 0 0 0;
-    }
-
     .pages {
         display: flex;
         flex-direction: column;
         width: fit-content;
-        margin: auto;
+        // margin: auto;
 
         > .pages__item {
             padding: 1rem 1rem 1rem 3.5rem;

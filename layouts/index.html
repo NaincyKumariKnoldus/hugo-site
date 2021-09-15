@@ -9,55 +9,92 @@
         <h3>Pedro Burgos</h3>
     </div>
 </section>
-<main>
-    <section class="page-centered">
-        <div id="whoami1" class="whoami">
+<main class="landingpage page-centered">
+    <section class="whoami">
+        <div id="whoami1">
             <div id="whoami1__info1" class="whoami__info">
                 {{ partial "svg/person.svg" . }}
                 <p>
-                    I’m <strong>Pedro Burgos</strong>, or Druskus, as I name myself online. I’m (almost) a
-                    <strong>Computer Engineer</strong>
-                    from Madrid, Spain.
+                I'm <b>Pedro Burgos</b> (aka Drusk), a 23 year old Computer Engieneer from Madrid, Spain. 
                 </p>
             </div>
             <div id="whoami1__info2" class="whoami__info">
                 {{ partial "svg/studies.svg" . }}
                 <p>
-                    I’m currently finishing a degree in <strong>Computer Science at Universidad Autónoma de
-                        Madrid</strong>
-                    and I plan to continue further this road by studying a masters degree. At the same time,
-                    I’m taking <strong>english lessons</strong> at one of the <strong>Official School of
-                        Languages</strong> of my city.
+                I have completed a degree in <b>Computer Science</b> by the Universidad Autónoma de Madrid,
+                and I've worked as a <b>DevOps Intern at GMV</b>. Furthermore I've studied <b>English</b> and I am now begining to learn <b>German</b>
+                at the Official School of Languages of my city.
                 </p>
             </div>
             {{ partial "svg/whoami1__image.svg" . }}
 
         </div>
-        <div id="whoami2" class="whoami">
+        <div id="whoami2">
             <div id="whoami2__info1" class="whoami__info">
                 {{ partial "svg/code.svg" . }}
-
                 <p>
-                    I also enjoy working on my own projects, usually related to my field and involving some
-                    kind of programming. Right now I’m getting into <strong>Rust and Shell
-                        Scripting</strong>.
+                I enjoy working in various projects mostly related to programming of some kind. Currently, 
+                I am getting into <b>Rust</b> and <b>React</b>.
                 </p>
             </div>
             <div id="whoami2__info2" class="whoami__info">
                 {{ partial "svg/heart.svg" . }}
-    
                 <p>
-                    Apart from that, I enjoy spending my time playing <strong>video games</strong> while
-                    either listening to
-                    some of my favourite <strong>music</strong> or talking to my friends online. I enjoy
-                    <strong>reading books</strong> aswell
-                    although I dont do it as often as I should. I’m currently focused on reading more,
-                    aswell as <strong>getting into exercising.</strong>
+                   I am planning on studying a <b>master's degree</b> on Computer Science abroad.
+                   Apart from programming I also enjoy music, I'm hoping to begin playing <b>piano</b> 
+                   once I've moved, and I like to go <b>cycling</b> now and then.
                 </p>
             </div>
             {{ partial "svg/whoami2__image.svg" . }}
         </div>
     </section>
+    <section class="interests">
+        <div class="section-title">
+            <h2>Interests</h2>
+            <p class="subtitle">This are some of my current interests</p>
+        </div>
+        <div class="interest"> 
+            {{ partial "svg/heart.svg" . }}
+            <p> 
+            <b>Books</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam
+            </p>
+        </div>
+        <div class="interest"> 
+            {{ partial "svg/heart.svg" . }}
+            <p> 
+            <b>Games</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam
+            </p>
+        </div>
+        <div class="interest"> 
+            {{ partial "svg/heart.svg" . }}
+            <p> 
+            <b>Music</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam
+            </p>
+        </div>
+        <div class="interest"> 
+            {{ partial "svg/heart.svg" . }}
+            <p> 
+            <b>Functional programming</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam
+            </p>
+        </div>
+        <div class="interest"> 
+            {{ partial "svg/heart.svg" . }}
+            <p> 
+            <b>Movies</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam
+            </p>
+        </div>
+
+
     </section>
 </main>
 {{ end }}

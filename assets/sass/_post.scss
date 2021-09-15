@@ -1,4 +1,4 @@
-main > article {
+.post > article {
     @include shadow-weak();
     margin-bottom: 2rem;
     margin-top: 2rem;
@@ -13,9 +13,11 @@ main > article {
     }
 
     > .highlight {
+        @include shadow-weak();
         width: 90%;
         margin: 2em auto;
     }
+
 
     @media only screen and (max-width: $media-mid) {
         > .titles {
@@ -28,18 +30,25 @@ main > article {
             width: 100%;
         }
     }
-
-    > blockquote {
-        margin: 2em auto;
-        width: 90%;
+    
+    // Nested quotes*
+    blockquote {
+        margin: 7px;
+        margin-left: 2em;
+        padding: 3px;
         border-left: 5px solid var(--ui-1);
         border-radius: 5px;
-        background: var(--bg-hl);
 
         > p {
-            margin: 0;
-            margin-left: 1.5em;
+            margin: 4px 0 4px 1em;
         }
+    }
+
+    > blockquote {
+        @include shadow-weak();
+        margin: 2em auto;
+        width: 90%;
+        background: var(--bg-hl);
     }
 
     > table {

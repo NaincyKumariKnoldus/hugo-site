@@ -1,4 +1,4 @@
 ---
 title: "Dump"
-private: true
+private: false
 ---

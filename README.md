@@ -1,3 +1,19 @@
 # Hugo Site
-The hugo site generator for my personal website, using the design from "https://github.com/druskus20/web-template"
 
+The hugo site generator for my website hosted [here](https://druskus.com)
+
+## Build and run locally
+Install Hugo
+```sh
+pacman -S hugo
+```
+Clone and build the website
+```sh
+git clone https://github.com/druskus20/hugo-site
+cd hugo-site
+hugo -D 
+```
+Run locally
+```sh
+hugo -D serve
+```

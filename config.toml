@@ -9,10 +9,10 @@ pygmentsUseClasses = true
 pygmentsCodefences = true
 
 [permalinks]
+  dump       = ":filename/"
   posts      = "posts/:year/:month/:title/"
   projects   = "projects/:title/"
 #  contact-me = ":filename/"
-  dump = ":filename/"
 
 [params]
   author = "Pedro Burgos"

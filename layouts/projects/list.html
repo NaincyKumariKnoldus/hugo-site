@@ -19,13 +19,12 @@
           {{ if isset .Params "img" }}
           class="withbg" 
           {{ end }}
-            >{{ .Title }}</h5>
+            >{{ upper .Title }}</h5>
         </div>
         {{ if isset .Params "description" }}
         <div class="back">
           <p class="description">{{ .Params.description }}</p>
           {{ if isset .Params "languages" }}
-
           <div class="languages">
           {{ range .Params.languages }}
             <b>{{ . }}</b>

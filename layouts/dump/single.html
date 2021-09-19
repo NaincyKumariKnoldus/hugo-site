@@ -1,0 +1,22 @@
+{{ define "title" }}
+{{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+{{ define "header" }}
+{{ partial "header" (dict "context" . "pagename" "dump") }}
+{{ end }}
+{{ define "main" }}
+<main class="dump page-centered">
+    <section class="page-title"> 
+      <h1>{{ .Title }}</h1>
+      <p class="subtitle">This is a dump of things I find in the internet</p> 
+    </section> 
+    <section class="dump-list">
+        {{ range $.Site.Data.dump.links }}
+        <div class="link">
+            <a class="link__title" href="{{ .link }}"><b>{{ .title }}</b></a>
+            <span class="link__desc">{{ .desc }}</span>
+        </div>
+        {{ end }}
+    </section>
+</main>
+{{ end }}

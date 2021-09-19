@@ -1,5 +1,6 @@
 .projectlist {
   .projects {
+    max-width: 50rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -11,7 +12,7 @@
       display: inline-block;
       margin: 1em 1em 1em 1em;
       width: 100%;
-      max-width: 400px;
+      max-width: 350px;
       > .front {
         > .bg {
           background-size: cover;
@@ -38,6 +39,7 @@
             background-color: var(--bg-0);
             padding: 0.35em 1em;
             margin: 0 0.25em;
+            @include shadow-weak();
           }
         }
       }
@@ -47,15 +49,14 @@
       > .back {
         @include shadow-weak();
         overflow: hidden;
-        height: 220px;
+        height: 200px;
         padding: 1em 2em;
-        border-radius: 10px;
+        border-radius: 2px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         justify-content: center;
-
         background-color: var(--bg-1);
       }
     }

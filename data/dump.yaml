@@ -1,0 +1,6 @@
+links:
+  - link:  "https://en.wikipedia.org/wiki/Taikyoku_shogi"
+    title: "Taikyoku_shogi"
+    desc:  "A variation of shogi with a 36x36 board and 257 unique pieces."
+  - link:  "https://os.phil-opp.com/"
+    title: "Writing an OS in Rust"

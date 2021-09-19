@@ -1,4 +1,9 @@
 links:
+  - link:  "https://bartoszmilewski.com/2021/02/16/functorio/"
+    title: "Functorio"
+    desc:  "Functional Programming ilustrated through Factorio."
+  - link:  "https://n-o-d-e.net"
+    title: "N O D E"
   - link:  "https://learnvimscriptthehardway.stevelosh.com/"
     title: "Learn Vimscript the Hard Way"
   - link:  "https://jprogr.github.io/TokiPonaDictionary/"

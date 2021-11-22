@@ -64,6 +64,7 @@
     // Reverse effect
     .project-card {
       position: relative;
+      opacity: 0.80;
       >.front.reversible,
       >.back {
         text-align: center;
@@ -85,6 +86,7 @@
         transform: rotateY(-180deg);
       }
       &:hover {
+        opacity: 1;
         >.front.reversible {
           transform: rotateY(180deg);
           opacity: 0;

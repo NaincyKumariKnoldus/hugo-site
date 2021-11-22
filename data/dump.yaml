@@ -13,7 +13,7 @@ links:
     title: "Parinfer"
     desc:  "Let's simplify the way we write Lisp."
   - link:   "https://bevyengine.org/"
-    title: "Beby"
+    title: "Bevy"
     desc:  "A new data driven videogame engine written in Rust."
   - link:  "https://elv.sh/"
     title: "Elvish Shell"

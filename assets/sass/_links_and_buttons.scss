@@ -35,3 +35,14 @@ button, a {
         }
     }
 }
+
+p a {
+    color: var(--accent);
+    opacity: 0.85;
+    text-decoration: none;
+
+    &:hover {
+        //text-decoration: underline;
+        opacity: 1;
+    }
+}

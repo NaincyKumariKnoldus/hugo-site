@@ -6,7 +6,7 @@
                 <li class="media-show"><button id="nav-toogle" class="underlined-button" onclick="navToogle()">{{ partial "svg/menu.svg" . }}</button></li> 
                 <li class="media-hide"><a href="/posts" class="underlined-button{{ if eq .pagename "posts" }}--selected{{ end }}">Posts</a></li>
                 <li class="media-hide"><a href="/projects" class="underlined-button{{ if eq .pagename "projects" }}--selected{{ end }}">Projects</a></li>
-                <li class="media-hide"><a href="/dump" class="underlined-button{{ if eq .pagename "dump" }}--selected{{ end }}">Dump</a></li>
+                <li class="media-hide"><a href="/dump" class="underlined-button{{ if eq .pagename "dump" }}--selected{{ end }}">Other</a></li>
                 <!-- <li class="media-hide"><a href="/contact-me" class="underlined-button{{ if eq .pagename "contact-me" }}--selected{{ end }}">Contact Me</a></li> --> 
                 <li><button id="theme-switch" class="underlined-button" onclick="themeSwitch()">{{ partial "svg/lightdark.svg" . }}</button></li>
         </ul>

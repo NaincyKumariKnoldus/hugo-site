@@ -13,10 +13,14 @@
             position: relative;
 
             &:hover {
-                text-decoration: underline;
+                > .pages__item__date, > .pages__item__title {
+                    opacity: 1;
+                    text-decoration: underline;
+                }
             }
 
             > .pages__item__date, > .pages__item__title {
+                opacity: 0.75;
                 text-decoration: none;
             }
 

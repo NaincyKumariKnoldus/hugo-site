@@ -52,6 +52,7 @@
     }
 
     > table {
+        @include shadow-weak();
         
         display: block;
         max-width: 100%;
@@ -85,6 +86,7 @@
     }
 
     > img, > p > img {
+        @include shadow-weak();
         margin: 0 auto 2em auto;
         display: block;
         max-width: 100%;

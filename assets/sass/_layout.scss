@@ -75,6 +75,8 @@ body {
 
     .page-title {
         padding: 2rem;
+    }
+    .page-title, .section-title {
         text-align: center;
 
       .subtitle {
@@ -83,6 +85,13 @@ body {
         opacity: 0.9;
       }
     }
+
+    .section-title {
+      text-align: center;
+      .subtitle {
+        font-weight: 600;
+     }
+   }
 }
 
 .stop-scrolling {

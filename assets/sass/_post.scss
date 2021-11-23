@@ -7,8 +7,12 @@
         text-align: center;
         margin-bottom: 5em;
 
-        > &__title {
+        > .titles__title {
             font-weight: 600;
+        }
+
+        > .titles__subtitle {
+            opacity: 0.75;
         }
     }
 

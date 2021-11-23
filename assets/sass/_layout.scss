@@ -82,14 +82,6 @@ body {
         font-weight: 600;
       }
     }
-
-    .section-title {
-      text-align: center;
-      .subtitle {
-        font-weight: 600;
-      }
-
-    }
 }
 
 .stop-scrolling {
@@ -103,7 +95,7 @@ body {
 // TODO: Figure out a more consistent way
 body > main {
   > article {
-    padding: 5rem 7rem;
+    padding: 7rem 7rem;
   }
 
   > article, &.pagelist, &.projectlist {

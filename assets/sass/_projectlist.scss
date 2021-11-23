@@ -87,6 +87,10 @@
       }
       &:hover {
         opacity: 1;
+        
+        > .front, > .back{
+          @include shadow-strong();
+        }
         >.front.reversible {
           transform: rotateY(180deg);
           opacity: 0;

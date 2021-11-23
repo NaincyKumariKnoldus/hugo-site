@@ -5,7 +5,8 @@
 
     > .titles {
         text-align: center;
-        margin-bottom: 6.5em;
+        margin: 0 auto 6.5em auto;
+        max-width: 85%;
 
         > .titles__title {
             font-weight: 600;

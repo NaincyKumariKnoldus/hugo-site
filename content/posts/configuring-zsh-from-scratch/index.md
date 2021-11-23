@@ -1,6 +1,6 @@
 ---
 title: "Configuring Zsh From Scratch"
-desc: "How I configured my shell without using any framework"
+desc: "Configuring my shell without using any framework"
 date: 2021-09-28T18:14:46+01:00
 author: "Druskus"
 categories: ["zsh", "shell"]

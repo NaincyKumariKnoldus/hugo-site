@@ -74,12 +74,14 @@ body {
     }
 
     .page-title {
-        padding: 2rem;
+        padding: 3rem;
         text-align: center;
 
-      .intro {
+      .subtitle {
         margin: 1em 0 0 0;
         font-weight: 600;
+        font-size: 1.2em;
+        opacity: 0.9;
       }
     }
 }

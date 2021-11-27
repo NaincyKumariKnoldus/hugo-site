@@ -7,6 +7,25 @@
         text-align: center;
         margin: 0 auto 6.5em auto;
         max-width: 85%;
+        width: fit-content;
+
+        > .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0.5;
+            //width: inherit;
+
+
+            > .info__date {
+                text-align: end;
+                margin: 1em 1em 1em 2em;
+            }
+
+            > .info__tags {
+                margin: 1em 2em 1em 1em;
+            }
+        }
 
         > .titles__title {
             font-weight: 600;

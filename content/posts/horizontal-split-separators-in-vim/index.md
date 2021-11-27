@@ -3,7 +3,7 @@ title: "Horizontal Split Separators in Vim"
 desc: "Making default Vim look better"
 date: 2021-10-14T14:30:13+01:00
 author: "Druskus"
-categories: ["Vim"]
+categories: ["Vim", "Fennel"]
 draft: false
 private: false
 ---

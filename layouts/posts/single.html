@@ -9,6 +9,20 @@
   <article class="page-centered">
 
     <div class="titles">
+      <div class="info">
+        <div class="info__tags">
+          {{ if isset .Params "categories" }}
+            {{ range .Params.categories }}
+            <span class="tag">
+              {{ . }}
+            </span>
+            {{ end }}
+          {{ end }}
+        </div>
+        <div class="info__date">
+          <span class="day">{{ .Date.Format "January 2, 2006" }}</span>
+        </div>
+      </div>
       <div class="titles__title">
         <h2>{{ .Title }}</h2>
       </div>

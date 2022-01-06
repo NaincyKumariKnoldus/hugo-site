@@ -11,11 +11,16 @@
     <p class="subtitle">I sometimes write stuff</p>
   </section>
   <section class="pages">
-    {{ range .Pages }}
-    <div class="pages__item">
-      <a class="pages__item__date" href="{{ .Permalink }}">{{ .Date.Format "January 2, 2006" }}</a>
-      <a class="pages__item__title" href="{{ .Permalink }}">{{ .Title }}</a>
-    </div>   
+    {{ range .Pages.GroupByDate "2006" }}
+    <div class="pages-group">
+      <h4 class="pages__year">{{ .Key }}</h4>
+      {{ range .Pages }}
+      <div class="pages__item">
+        <a class="pages__item__date" href="{{ .Permalink }}">{{ .Date.Format "January 2, 2006" }}</a>
+        <a class="pages__item__title" href="{{ .Permalink }}">{{ .Title }}</a>
+      </div>   
+      {{ end }}
+    </div>
     {{ end }}
   </section>
 </main>

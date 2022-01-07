@@ -17,31 +17,52 @@
         align-items: center;
         flex-wrap: wrap;
 
-
         .project-card {
           text-decoration: none;
           display: inline-block;
           margin: 1em 1em 1em 1em;
           width: 100%;
           max-width: 350px;
-
           > .front {
             font-family: "Jetbrains Mono", monospace;
 
-            .status {
-              font-weight: 600;
-              &--finished {
-                display: none;
-              }
-              &--wip {
-                color: var(--blue-1);
-                
-              }
-              &--abandoned {
-                color: var(--red);
-
+            > .overlay.withbg {
+              background: rgba(0, 0, 0, 0.3);
+              > h5 {
+                color: white;
               }
             }
+
+            > .overlay {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              min-height: 90px;
+              width: 150%;
+
+              > h5, > .status {
+                margin-bottom: 0.5em;
+                margin-top: 0.5em;
+              }
+
+              .status {
+                font-weight: 600;
+
+                &--finished {
+                  display: none;
+                }
+                &--wip {
+                  color: var(--blue-1);
+                  
+                }
+                &--abandoned {
+                  color: var(--red);
+                }
+              }
+            }
+
 
             > .bg {
               background-size: cover;
@@ -51,10 +72,6 @@
               position: absolute;
               filter: blur(3px);
               z-index: -999;
-            }
-
-            > h5.withbg {
-              color: white;
             }
           } 
 

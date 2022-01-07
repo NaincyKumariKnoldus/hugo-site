@@ -3,7 +3,7 @@ title: "First Post"
 desc: "Cat."
 date: 2021-09-12T20:46:59+02:00
 author: "Druskus"
-categories: ["Undefined"]
+categories: ["first"]
 draft: false
 private: false
 ---

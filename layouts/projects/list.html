@@ -35,14 +35,14 @@
           <a class="project-card {{ $class }}" href="{{ .Params.externallink }}">
             <div class="front {{ if isset .Params "description" }}reversible{{ end }}">
               {{ if isset .Params "img" }}<div class="bg" style="background-image: url({{ .Permalink }}/{{ .Params.img }});"></div>{{ end }}
-              <h5 
-              {{ if isset .Params "img" }}
-              class="withbg" 
-              {{ end }}
-                >{{ upper .Title }}</h5>
-              <span class="status status--{{ lower $status }}">{{ $status }}</span>
+              <div class="overlay{{ if isset .Params "img" }} withbg{{ end }}">
+
+              <h5>{{ upper .Title }}</h5>
+              <div class="status status--{{ lower $status }}">{{ $status }}</div>
+            </div>
             </div>
             {{ if isset .Params "description" }}
+
             <div class="back">
               <p class="description">
 

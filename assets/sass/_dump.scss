@@ -4,6 +4,17 @@
     max-width: 50rem;
 
     > .link {
+      > a {
+        color: var(--accent);
+        opacity: 0.85;
+        text-decoration: none;
+
+        &:hover {
+          //text-decoration: underline;
+          opacity: 1;
+        }
+      }
+
       margin-bottom: 1rem;
     }
   }

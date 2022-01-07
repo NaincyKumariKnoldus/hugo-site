@@ -14,10 +14,10 @@
         {{ range $.Site.Data.dump.links }}
         <div class="link">
             {{ if .desc }}
-                <a class="link__title" href="{{ .link }}"><b>{{ .title }}:</b></a>
+                <a class="link__title" href="{{ .link }}">{{ .title }}:</a>
                 <span class="link__desc">{{ .desc }}</span>
             {{ else }}
-                <a class="link__title" href="{{ .link }}"><b>{{ .title }}</b></a>
+                <a class="link__title" href="{{ .link }}">{{ .title }}</a>
             {{ end }}
         </div>
         {{ end }}

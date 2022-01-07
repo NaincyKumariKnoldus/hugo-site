@@ -1,7 +1,15 @@
 {{ define "title" }}
-Error 404 &ndash; {{ .Site.Title }}
+404 &ndash; {{ .Site.Title }}
 {{ end }}
 
+{{ define "header" }}
+{{ partial "header" (dict "context" . "pagename" "dump") }}
+{{ end }}
 {{ define "main" }}
-
+<main class="dump page-centered">
+    <section class="page-title"> 
+      <h1>404</h1>
+      <p class="subtitle">Error, the page you are looking for could not be found.</p> 
+    </section> 
+</main>
 {{ end }}

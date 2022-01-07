@@ -5,5 +5,6 @@ externallink: "https://github.com/druskus20/dostack.vim"
 description: "A vim syntax plugin for my TODO stack."
 status: "FINISHED"
 languages: [vim]
+img: "dostack.webp"
 private: true
 ---

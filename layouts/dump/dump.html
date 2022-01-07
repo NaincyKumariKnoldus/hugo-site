@@ -13,8 +13,12 @@
     <section class="dump-list">
         {{ range $.Site.Data.dump.links }}
         <div class="link">
-            <a class="link__title" href="{{ .link }}"><b>{{ .title }}:</b></a>
-            <span class="link__desc">{{ .desc }}</span>
+            {{ if .desc }}
+                <a class="link__title" href="{{ .link }}"><b>{{ .title }}:</b></a>
+                <span class="link__desc">{{ .desc }}</span>
+            {{ else }}
+                <a class="link__title" href="{{ .link }}"><b>{{ .title }}</b></a>
+            {{ end }}
         </div>
         {{ end }}
     </section>

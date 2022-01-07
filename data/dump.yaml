@@ -1,4 +1,10 @@
 links:
+  - link:  "https://raytracing.github.io"
+    title: "Raytracing in One Weekend"
+    desc:  "A series of books about writting a raytracer in C++"
+  - link:  "https://github.com/mtytel/helm"
+    title: "Helm"
+    desc:  "A versatile open source synthetiser and VST plugin."
   - link:  "https://bartoszmilewski.com/2021/02/16/functorio/"
     title: "Functorio"
     desc:  "Functional Programming ilustrated through Factorio."
@@ -26,3 +32,5 @@ links:
   - link:  "https://github.com/baku89/glisp"
     title: "glisp"
     desc:  "A Lisp-based Design Tool Bridging Graphic Design and Computational Arts"
+
+

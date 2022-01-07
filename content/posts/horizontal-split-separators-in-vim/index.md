@@ -18,7 +18,7 @@ Vim's default split separators look like this:
 
 Vim also provides the option `fillchars` to specify different characters used for the UI, and so, we can change the look of our vertical separators by specifying: 
 
-```lisp
+```clojure
 (vim.opt.fillchars:append "vert:│")
 ```
 
@@ -33,14 +33,14 @@ In my case, I'm using [Feline](https://github.com/famiu/feline.nvim) as my statu
 
 We can simply define a provider that fills the status bar with the character `─`. We should take the width of our current split window so that the characters don't overflow: 
 
-```lisp 
+```clojure 
 (defn inactive-separator-provider []
     (string.rep "─" (vim.api.nvim_win_get_width 0)))
 ```
 
 We only want to use this provider for inactive windows, as we still want to display our usual status bar in the window that's currently focused. Luckily, Feline has a specific table for this called `components.inactive`:
 
-```lisp 
+```clojure 
 (tset components.inactive 1
      [{:provider inactive-separator-provider 
        :hl {:bg "NONE" :fg horiz-separator-color}}])
@@ -48,7 +48,7 @@ We only want to use this provider for inactive windows, as we still want to disp
 
 Finally, we should also override the background and foreground colors so that they look the same way as the vertical separators:
 
-```lisp
+```clojure
 (feline.setup 
   {:default_hl  
     {:inactive 
@@ -75,7 +75,7 @@ winnr([{arg}])  The result is a Number, which is the number of the current
 ```
 
 If there isn't any window next, the function will return the id of the current one, thus, we can add a check in our `inactive-separator-provider` as follows: 
-```lisp 
+```clojure 
 (defn inactive-separator-provider []
   (if (not= (vim.fn.winnr) (vim.fn.winnr :j))
     (string.rep "─" (vim.api.nvim_win_get_width 0))

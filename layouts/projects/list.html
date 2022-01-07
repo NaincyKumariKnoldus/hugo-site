@@ -16,7 +16,23 @@
         <h3 class="projects-group__title">{{ .Key }}</h3>
         <div class="projects-group__flex">
           {{ range .Pages }}
-          <a class="project-card" href="{{ .Params.externallink }}">
+
+          {{ $status := "FINISHED" }}
+          {{ if isset .Params "status" }}
+          {{ $status = upper .Params.status }}
+          {{ else }}
+          {{ end }}
+          
+          {{ $class := "" }}
+          {{ if eq $status "FINISHED" }}
+          {{ $class = "project-card--finished" }}
+          {{ else if eq $status "WIP" }}
+          {{ $class = "project-card--wip" }}
+          {{ else if eq $status "ABANDONED" }}
+          {{ $class = "project-card--abandoned" }}
+          {{ end }}
+
+          <a class="project-card {{ $class }}" href="{{ .Params.externallink }}">
             <div class="front {{ if isset .Params "description" }}reversible{{ end }}">
               {{ if isset .Params "img" }}<div class="bg" style="background-image: url({{ .Permalink }}/{{ .Params.img }});"></div>{{ end }}
               <h5 
@@ -24,10 +40,15 @@
               class="withbg" 
               {{ end }}
                 >{{ upper .Title }}</h5>
+              <span class="status status--{{ lower $status }}">{{ $status }}</span>
             </div>
             {{ if isset .Params "description" }}
             <div class="back">
-              <p class="description">{{ .Params.description }}</p>
+              <p class="description">
+
+
+              {{ .Params.description }}
+              </p>
               {{ if isset .Params "languages" }}
               <div class="languages">
               {{ range .Params.languages }}

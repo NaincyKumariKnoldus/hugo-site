@@ -24,10 +24,23 @@
           margin: 1em 1em 1em 1em;
           width: 100%;
           max-width: 350px;
-          > .front {
 
-            h5 {
-              font-family: "Jetbrains Mono", monospace;
+          > .front {
+            font-family: "Jetbrains Mono", monospace;
+
+            .status {
+              font-weight: 600;
+              &--finished {
+                display: none;
+              }
+              &--wip {
+                color: var(--blue-1);
+                
+              }
+              &--abandoned {
+                color: var(--red);
+
+              }
             }
 
             > .bg {
